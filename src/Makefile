@@ -32,6 +32,8 @@ clean:
 	rm -rf report
 	rm -rf docs
 	rm -rf build
+	rm -rf html
+	rm -rf latex
 
 dvi:
 	mkdir -p docs
