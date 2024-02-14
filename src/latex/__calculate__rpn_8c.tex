@@ -1,0 +1,529 @@
+\hypertarget{__calculate__rpn_8c}{}\doxysection{backend/calculate\+\_\+rpn/\+\_\+calculate\+\_\+rpn.c File Reference}
+\label{__calculate__rpn_8c}\index{backend/calculate\_rpn/\_calculate\_rpn.c@{backend/calculate\_rpn/\_calculate\_rpn.c}}
+{\ttfamily \#include \char`\"{}../backend.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{__calculate__rpn_8c_ab34d988ec9c57a20419785ee8b140580}{\+\_\+calculate\+\_\+rpn}} (char $\ast$expression, char $\ast$$\ast$result)
+\item 
+void \mbox{\hyperlink{__calculate__rpn_8c_a10f9b381ba9df973fbc70d6b26e0d5f8}{\+\_\+process\+\_\+operation}} (const char $\ast$ptr, \mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$$\ast$current, int $\ast$status)
+\item 
+void \mbox{\hyperlink{__calculate__rpn_8c_a7a1b93e5d9cd3a078b83c20eb7238f01}{\+\_\+calculate\+\_\+result}} (\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$current, char $\ast$$\ast$result, int status)
+\item 
+\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$ \mbox{\hyperlink{__calculate__rpn_8c_a9a8d92e4dce43bff303de9d429b9409a}{\+\_\+plus}} (\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$current, int $\ast$status)
+\item 
+\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$ \mbox{\hyperlink{__calculate__rpn_8c_ac5ba47359824d9fcb59fb81dea35c87c}{\+\_\+minus}} (\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$current, int $\ast$status)
+\item 
+\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$ \mbox{\hyperlink{__calculate__rpn_8c_a23cc1b209e085d9bbf2280c6c9dadb68}{\+\_\+multi}} (\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$current, int $\ast$status)
+\item 
+\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$ \mbox{\hyperlink{__calculate__rpn_8c_a9441ab5262f74f2cf460a51d30cd4aa9}{\+\_\+devide}} (\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$current, int $\ast$status)
+\item 
+\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$ \mbox{\hyperlink{__calculate__rpn_8c_a893752115676a2187f0a81a59325d3cf}{\+\_\+power}} (\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$current, int $\ast$status)
+\item 
+\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$ \mbox{\hyperlink{__calculate__rpn_8c_afb6b04ad7ff1d249679d7a12e5fdf42a}{\+\_\+uniminus}} (\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$current, int $\ast$status)
+\item 
+\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$ \mbox{\hyperlink{__calculate__rpn_8c_aa15d644a57b6187b6fd6eac96148982e}{\+\_\+acos}} (\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$current, int $\ast$status)
+\item 
+\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$ \mbox{\hyperlink{__calculate__rpn_8c_a22c75748d2a6a2b04293f7ea41124fc0}{\+\_\+asin}} (\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$current, int $\ast$status)
+\item 
+\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$ \mbox{\hyperlink{__calculate__rpn_8c_a5bc368b64be6dd5a3e0c0dbd4eda199f}{\+\_\+atan}} (\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$current, int $\ast$status)
+\item 
+\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$ \mbox{\hyperlink{__calculate__rpn_8c_a9a65eec2a0fcf9777c10218832c9d164}{\+\_\+cos}} (\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$current, int $\ast$status)
+\item 
+\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$ \mbox{\hyperlink{__calculate__rpn_8c_a179f9f1a006eebe406cef1b16deacb26}{\+\_\+ln}} (\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$current, int $\ast$status)
+\item 
+\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$ \mbox{\hyperlink{__calculate__rpn_8c_a35e7ea035ee667ec45ed0fb8d51578db}{\+\_\+log}} (\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$current, int $\ast$status)
+\item 
+\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$ \mbox{\hyperlink{__calculate__rpn_8c_a08bca090eb755dc91c0c9610fae1552c}{\+\_\+mod}} (\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$current, int $\ast$status)
+\item 
+\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$ \mbox{\hyperlink{__calculate__rpn_8c_ac003734cf13fbe35c2711617f5bc0622}{\+\_\+sqrt}} (\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$current, int $\ast$status)
+\item 
+\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$ \mbox{\hyperlink{__calculate__rpn_8c_aee9242a365b7998a02724e6fa3a8931b}{\+\_\+sin}} (\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$current, int $\ast$status)
+\item 
+\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$ \mbox{\hyperlink{__calculate__rpn_8c_a23dda6145fcef0e35de625722979d5e3}{\+\_\+tan}} (\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$current, int $\ast$status)
+\item 
+int \mbox{\hyperlink{__calculate__rpn_8c_ae2aee3498c3a2beed16ef1e543f38324}{\+\_\+is\+\_\+number}} (char $\ast$ptr)
+\item 
+void \mbox{\hyperlink{__calculate__rpn_8c_afb14c66e6292310060494e628fea8d25}{\+\_\+remove\+\_\+trailing\+\_\+zeros}} (char $\ast$$\ast$str)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{__calculate__rpn_8c_aa15d644a57b6187b6fd6eac96148982e}\label{__calculate__rpn_8c_aa15d644a57b6187b6fd6eac96148982e}} 
+\index{\_calculate\_rpn.c@{\_calculate\_rpn.c}!\_acos@{\_acos}}
+\index{\_acos@{\_acos}!\_calculate\_rpn.c@{\_calculate\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_acos()}{\_acos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}}$\ast$ \+\_\+acos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$}]{current,  }\item[{int $\ast$}]{status }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{156                                                 \{}
+\DoxyCodeLine{157   \textcolor{keywordflow}{if} (current == NULL) \{}
+\DoxyCodeLine{158     *status = \mbox{\hyperlink{backend_8h_a2d6ba52c5a84d1dd2ec00d804c42b52c}{ERROR\_ILLEGAL\_EXPRESSION}};}
+\DoxyCodeLine{159   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} > 1 || current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} < -\/1) \{}
+\DoxyCodeLine{160     *status = \mbox{\hyperlink{backend_8h_a4120d6e73e9991b164d753b743f5c021}{ERROR\_ILLEGAL\_ARGUMENT}};}
+\DoxyCodeLine{161   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{162     \textcolor{keywordtype}{double} result = acos(current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}});}
+\DoxyCodeLine{163     current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} = result;}
+\DoxyCodeLine{164   \}}
+\DoxyCodeLine{165   \textcolor{keywordflow}{return} current;}
+\DoxyCodeLine{166 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__calculate__rpn_8c_a22c75748d2a6a2b04293f7ea41124fc0}\label{__calculate__rpn_8c_a22c75748d2a6a2b04293f7ea41124fc0}} 
+\index{\_calculate\_rpn.c@{\_calculate\_rpn.c}!\_asin@{\_asin}}
+\index{\_asin@{\_asin}!\_calculate\_rpn.c@{\_calculate\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_asin()}{\_asin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}}$\ast$ \+\_\+asin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$}]{current,  }\item[{int $\ast$}]{status }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{168                                                 \{}
+\DoxyCodeLine{169   \textcolor{keywordflow}{if} (current == NULL) \{}
+\DoxyCodeLine{170     *status = \mbox{\hyperlink{backend_8h_a2d6ba52c5a84d1dd2ec00d804c42b52c}{ERROR\_ILLEGAL\_EXPRESSION}};}
+\DoxyCodeLine{171   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} > 1 || current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} < -\/1) \{}
+\DoxyCodeLine{172     *status = \mbox{\hyperlink{backend_8h_a4120d6e73e9991b164d753b743f5c021}{ERROR\_ILLEGAL\_ARGUMENT}};}
+\DoxyCodeLine{173   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{174     \textcolor{keywordtype}{double} result = asin(current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}});}
+\DoxyCodeLine{175     current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} = result;}
+\DoxyCodeLine{176   \}}
+\DoxyCodeLine{177   \textcolor{keywordflow}{return} current;}
+\DoxyCodeLine{178 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__calculate__rpn_8c_a5bc368b64be6dd5a3e0c0dbd4eda199f}\label{__calculate__rpn_8c_a5bc368b64be6dd5a3e0c0dbd4eda199f}} 
+\index{\_calculate\_rpn.c@{\_calculate\_rpn.c}!\_atan@{\_atan}}
+\index{\_atan@{\_atan}!\_calculate\_rpn.c@{\_calculate\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_atan()}{\_atan()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}}$\ast$ \+\_\+atan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$}]{current,  }\item[{int $\ast$}]{status }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{180                                                 \{}
+\DoxyCodeLine{181   \textcolor{keywordflow}{if} (current == NULL) \{}
+\DoxyCodeLine{182     *status = \mbox{\hyperlink{backend_8h_a2d6ba52c5a84d1dd2ec00d804c42b52c}{ERROR\_ILLEGAL\_EXPRESSION}};}
+\DoxyCodeLine{183   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{184     \textcolor{keywordtype}{double} result = atan(current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}});}
+\DoxyCodeLine{185     current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} = result;}
+\DoxyCodeLine{186   \}}
+\DoxyCodeLine{187   \textcolor{keywordflow}{return} current;}
+\DoxyCodeLine{188 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__calculate__rpn_8c_a7a1b93e5d9cd3a078b83c20eb7238f01}\label{__calculate__rpn_8c_a7a1b93e5d9cd3a078b83c20eb7238f01}} 
+\index{\_calculate\_rpn.c@{\_calculate\_rpn.c}!\_calculate\_result@{\_calculate\_result}}
+\index{\_calculate\_result@{\_calculate\_result}!\_calculate\_rpn.c@{\_calculate\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_calculate\_result()}{\_calculate\_result()}}
+{\footnotesize\ttfamily void \+\_\+calculate\+\_\+result (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$}]{current,  }\item[{char $\ast$$\ast$}]{result,  }\item[{int}]{status }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{66                                                                      \{}
+\DoxyCodeLine{67   \textcolor{keywordflow}{if} (isinf(current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}})) \{}
+\DoxyCodeLine{68     *result = strdup(\textcolor{stringliteral}{"{}Расчет невозможен"{}});}
+\DoxyCodeLine{69   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (status == 0) \{}
+\DoxyCodeLine{70     \textcolor{keywordflow}{if} (current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} > 1e+20) \{}
+\DoxyCodeLine{71       *result = calloc(1000, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{72       sprintf(*result, \textcolor{stringliteral}{"{}\%e"{}}, current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}});}
+\DoxyCodeLine{73     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{74       *result = calloc(1000, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{75       sprintf(*result, \textcolor{stringliteral}{"{}\%.7lf"{}}, current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}});}
+\DoxyCodeLine{76     \}}
+\DoxyCodeLine{77     \mbox{\hyperlink{__calculate__rpn_8c_afb14c66e6292310060494e628fea8d25}{\_remove\_trailing\_zeros}}(result);}
+\DoxyCodeLine{78   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (status == \mbox{\hyperlink{backend_8h_afe96513b1cca2b04f8b6a15efa6fe4f4}{ERROR\_DIVISION\_BY\_ZERO}}) \{}
+\DoxyCodeLine{79     *result = strdup(\textcolor{stringliteral}{"{}Деление на ноль"{}});}
+\DoxyCodeLine{80   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (status == \mbox{\hyperlink{backend_8h_a4120d6e73e9991b164d753b743f5c021}{ERROR\_ILLEGAL\_ARGUMENT}}) \{}
+\DoxyCodeLine{81     *result = strdup(\textcolor{stringliteral}{"{}Некорректный аргумент"{}});}
+\DoxyCodeLine{82   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (status == \mbox{\hyperlink{backend_8h_a2d6ba52c5a84d1dd2ec00d804c42b52c}{ERROR\_ILLEGAL\_EXPRESSION}}) \{}
+\DoxyCodeLine{83     *result = strdup(\textcolor{stringliteral}{"{}Некорректное выражение"{}});}
+\DoxyCodeLine{84   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{85     *result = strdup(\textcolor{stringliteral}{"{}0"{}});}
+\DoxyCodeLine{86   \}}
+\DoxyCodeLine{87 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__calculate__rpn_8c_ab34d988ec9c57a20419785ee8b140580}\label{__calculate__rpn_8c_ab34d988ec9c57a20419785ee8b140580}} 
+\index{\_calculate\_rpn.c@{\_calculate\_rpn.c}!\_calculate\_rpn@{\_calculate\_rpn}}
+\index{\_calculate\_rpn@{\_calculate\_rpn}!\_calculate\_rpn.c@{\_calculate\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_calculate\_rpn()}{\_calculate\_rpn()}}
+{\footnotesize\ttfamily int \+\_\+calculate\+\_\+rpn (\begin{DoxyParamCaption}\item[{char $\ast$}]{expression,  }\item[{char $\ast$$\ast$}]{result }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3                                                     \{}
+\DoxyCodeLine{4   setlocale(LC\_NUMERIC, \textcolor{stringliteral}{"{}C"{}});}
+\DoxyCodeLine{5   \textcolor{keywordtype}{int} status = 0;}
+\DoxyCodeLine{6   \textcolor{keywordtype}{int} len = strlen(expression);}
+\DoxyCodeLine{7   \textcolor{keywordtype}{char} *tmp = malloc(len * \textcolor{keyword}{sizeof}(expression));}
+\DoxyCodeLine{8   strcpy(tmp, expression);}
+\DoxyCodeLine{9   \textcolor{keywordtype}{char} *ptr = strtok(tmp, \textcolor{stringliteral}{"{} "{}});}
+\DoxyCodeLine{10   \mbox{\hyperlink{struct_p_l___stack}{PL\_Stack}} *root = \mbox{\hyperlink{backend_8h_a4121f936bb08a50fd8a9d134daecbe31}{\_PL\_init}}(ptr);}
+\DoxyCodeLine{11   \textcolor{keywordflow}{if} (\mbox{\hyperlink{__calculate__rpn_8c_ae2aee3498c3a2beed16ef1e543f38324}{\_is\_number}}(ptr) == 0)}
+\DoxyCodeLine{12     status = \mbox{\hyperlink{backend_8h_a2d6ba52c5a84d1dd2ec00d804c42b52c}{ERROR\_ILLEGAL\_EXPRESSION}};}
+\DoxyCodeLine{13   \mbox{\hyperlink{struct_p_l___stack}{PL\_Stack}} *current = root;}
+\DoxyCodeLine{14   \textcolor{keywordflow}{while} (ptr != NULL \&\& status == 0) \{}
+\DoxyCodeLine{15     ptr = strtok(NULL, \textcolor{stringliteral}{"{} "{}});}
+\DoxyCodeLine{16     \textcolor{keywordflow}{if} (ptr != NULL \&\& \mbox{\hyperlink{__calculate__rpn_8c_ae2aee3498c3a2beed16ef1e543f38324}{\_is\_number}}(ptr)) \{}
+\DoxyCodeLine{17       \mbox{\hyperlink{backend_8h_a75c725575b365bc03f25f7c994654db1}{\_PL\_push}}(\&current, ptr);}
+\DoxyCodeLine{18     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (ptr != NULL) \{}
+\DoxyCodeLine{19       \mbox{\hyperlink{__calculate__rpn_8c_a10f9b381ba9df973fbc70d6b26e0d5f8}{\_process\_operation}}(ptr, \&current, \&status);}
+\DoxyCodeLine{20     \}}
+\DoxyCodeLine{21   \}}
+\DoxyCodeLine{22   \mbox{\hyperlink{__calculate__rpn_8c_a7a1b93e5d9cd3a078b83c20eb7238f01}{\_calculate\_result}}(current, result, status);}
+\DoxyCodeLine{23   \mbox{\hyperlink{backend_8h_a79694d15e5bc1e9cebe34c2d970435ed}{\_PL\_destroy}}(\&root);}
+\DoxyCodeLine{24   free(tmp);}
+\DoxyCodeLine{25   \textcolor{keywordflow}{return} status;}
+\DoxyCodeLine{26 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__calculate__rpn_8c_a9a65eec2a0fcf9777c10218832c9d164}\label{__calculate__rpn_8c_a9a65eec2a0fcf9777c10218832c9d164}} 
+\index{\_calculate\_rpn.c@{\_calculate\_rpn.c}!\_cos@{\_cos}}
+\index{\_cos@{\_cos}!\_calculate\_rpn.c@{\_calculate\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_cos()}{\_cos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}}$\ast$ \+\_\+cos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$}]{current,  }\item[{int $\ast$}]{status }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{190                                                \{}
+\DoxyCodeLine{191   \textcolor{keywordflow}{if} (current == NULL) \{}
+\DoxyCodeLine{192     *status = \mbox{\hyperlink{backend_8h_a2d6ba52c5a84d1dd2ec00d804c42b52c}{ERROR\_ILLEGAL\_EXPRESSION}};}
+\DoxyCodeLine{193   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{194     \textcolor{keywordtype}{double} result = cos(current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}});}
+\DoxyCodeLine{195     current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} = result;}
+\DoxyCodeLine{196   \}}
+\DoxyCodeLine{197   \textcolor{keywordflow}{return} current;}
+\DoxyCodeLine{198 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__calculate__rpn_8c_a9441ab5262f74f2cf460a51d30cd4aa9}\label{__calculate__rpn_8c_a9441ab5262f74f2cf460a51d30cd4aa9}} 
+\index{\_calculate\_rpn.c@{\_calculate\_rpn.c}!\_devide@{\_devide}}
+\index{\_devide@{\_devide}!\_calculate\_rpn.c@{\_calculate\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_devide()}{\_devide()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}}$\ast$ \+\_\+devide (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$}]{current,  }\item[{int $\ast$}]{status }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{122                                                   \{}
+\DoxyCodeLine{123   \textcolor{keywordflow}{if} (current == NULL || current-\/>\mbox{\hyperlink{struct_p_l___stack_a7da488d1cb145a88e22b5612ffeae509}{next}} == NULL) \{}
+\DoxyCodeLine{124     *status = \mbox{\hyperlink{backend_8h_a2d6ba52c5a84d1dd2ec00d804c42b52c}{ERROR\_ILLEGAL\_EXPRESSION}};}
+\DoxyCodeLine{125   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} < 1e-\/7 \&\& current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} > -\/1e-\/7) \{}
+\DoxyCodeLine{126     *status = \mbox{\hyperlink{backend_8h_afe96513b1cca2b04f8b6a15efa6fe4f4}{ERROR\_DIVISION\_BY\_ZERO}};}
+\DoxyCodeLine{127   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{128     \textcolor{keywordtype}{double} result = current-\/>\mbox{\hyperlink{struct_p_l___stack_a7da488d1cb145a88e22b5612ffeae509}{next}}-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} / current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}};}
+\DoxyCodeLine{129     \mbox{\hyperlink{backend_8h_a305227a30d17e71633d9779541653843}{\_PL\_pop}}(\&current);}
+\DoxyCodeLine{130     current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} = result;}
+\DoxyCodeLine{131   \}}
+\DoxyCodeLine{132   \textcolor{keywordflow}{return} current;}
+\DoxyCodeLine{133 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__calculate__rpn_8c_ae2aee3498c3a2beed16ef1e543f38324}\label{__calculate__rpn_8c_ae2aee3498c3a2beed16ef1e543f38324}} 
+\index{\_calculate\_rpn.c@{\_calculate\_rpn.c}!\_is\_number@{\_is\_number}}
+\index{\_is\_number@{\_is\_number}!\_calculate\_rpn.c@{\_calculate\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_is\_number()}{\_is\_number()}}
+{\footnotesize\ttfamily int \+\_\+is\+\_\+number (\begin{DoxyParamCaption}\item[{char $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{267                           \{}
+\DoxyCodeLine{268   \textcolor{keywordtype}{int} status = 1;}
+\DoxyCodeLine{269   \textcolor{keywordtype}{int} mem = 0;}
+\DoxyCodeLine{270   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; ptr[i] != \textcolor{charliteral}{'\(\backslash\)0'} \&\& status == 1; i++) \{}
+\DoxyCodeLine{271     \textcolor{keywordflow}{if} (ptr[i] == \textcolor{charliteral}{'e'} \&\& (ptr[i + 1] == \textcolor{charliteral}{'-\/'} || ptr[i + 1] == \textcolor{charliteral}{'+'}) \&\& mem == 0) \{}
+\DoxyCodeLine{272       i++;}
+\DoxyCodeLine{273       mem = 1;}
+\DoxyCodeLine{274       \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{275     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isdigit(ptr[i]) == 0 \&\& ptr[i] != \textcolor{charliteral}{'.'})}
+\DoxyCodeLine{276       status = 0;}
+\DoxyCodeLine{277   \}}
+\DoxyCodeLine{278   \textcolor{keywordflow}{return} status;}
+\DoxyCodeLine{279 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__calculate__rpn_8c_a179f9f1a006eebe406cef1b16deacb26}\label{__calculate__rpn_8c_a179f9f1a006eebe406cef1b16deacb26}} 
+\index{\_calculate\_rpn.c@{\_calculate\_rpn.c}!\_ln@{\_ln}}
+\index{\_ln@{\_ln}!\_calculate\_rpn.c@{\_calculate\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_ln()}{\_ln()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}}$\ast$ \+\_\+ln (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$}]{current,  }\item[{int $\ast$}]{status }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{200                                               \{}
+\DoxyCodeLine{201   \textcolor{keywordflow}{if} (current == NULL) \{}
+\DoxyCodeLine{202     *status = \mbox{\hyperlink{backend_8h_a2d6ba52c5a84d1dd2ec00d804c42b52c}{ERROR\_ILLEGAL\_EXPRESSION}};}
+\DoxyCodeLine{203   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} <= 1e-\/7) \{}
+\DoxyCodeLine{204     *status = \mbox{\hyperlink{backend_8h_a4120d6e73e9991b164d753b743f5c021}{ERROR\_ILLEGAL\_ARGUMENT}};}
+\DoxyCodeLine{205   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{206     \textcolor{keywordtype}{double} result = log(current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}});}
+\DoxyCodeLine{207     current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} = result;}
+\DoxyCodeLine{208   \}}
+\DoxyCodeLine{209   \textcolor{keywordflow}{return} current;}
+\DoxyCodeLine{210 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__calculate__rpn_8c_a35e7ea035ee667ec45ed0fb8d51578db}\label{__calculate__rpn_8c_a35e7ea035ee667ec45ed0fb8d51578db}} 
+\index{\_calculate\_rpn.c@{\_calculate\_rpn.c}!\_log@{\_log}}
+\index{\_log@{\_log}!\_calculate\_rpn.c@{\_calculate\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_log()}{\_log()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}}$\ast$ \+\_\+log (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$}]{current,  }\item[{int $\ast$}]{status }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{212                                                \{}
+\DoxyCodeLine{213   \textcolor{keywordflow}{if} (current == NULL) \{}
+\DoxyCodeLine{214     *status = \mbox{\hyperlink{backend_8h_a2d6ba52c5a84d1dd2ec00d804c42b52c}{ERROR\_ILLEGAL\_EXPRESSION}};}
+\DoxyCodeLine{215   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} <= 1e-\/7) \{}
+\DoxyCodeLine{216     *status = \mbox{\hyperlink{backend_8h_a4120d6e73e9991b164d753b743f5c021}{ERROR\_ILLEGAL\_ARGUMENT}};}
+\DoxyCodeLine{217   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{218     \textcolor{keywordtype}{double} result = log10(current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}});}
+\DoxyCodeLine{219     current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} = result;}
+\DoxyCodeLine{220   \}}
+\DoxyCodeLine{221   \textcolor{keywordflow}{return} current;}
+\DoxyCodeLine{222 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__calculate__rpn_8c_ac5ba47359824d9fcb59fb81dea35c87c}\label{__calculate__rpn_8c_ac5ba47359824d9fcb59fb81dea35c87c}} 
+\index{\_calculate\_rpn.c@{\_calculate\_rpn.c}!\_minus@{\_minus}}
+\index{\_minus@{\_minus}!\_calculate\_rpn.c@{\_calculate\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_minus()}{\_minus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}}$\ast$ \+\_\+minus (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$}]{current,  }\item[{int $\ast$}]{status }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{100                                                  \{}
+\DoxyCodeLine{101   \textcolor{keywordflow}{if} (current == NULL || current-\/>\mbox{\hyperlink{struct_p_l___stack_a7da488d1cb145a88e22b5612ffeae509}{next}} == NULL) \{}
+\DoxyCodeLine{102     *status = \mbox{\hyperlink{backend_8h_a2d6ba52c5a84d1dd2ec00d804c42b52c}{ERROR\_ILLEGAL\_EXPRESSION}};}
+\DoxyCodeLine{103   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{104     \textcolor{keywordtype}{double} result = current-\/>\mbox{\hyperlink{struct_p_l___stack_a7da488d1cb145a88e22b5612ffeae509}{next}}-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} -\/ current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}};}
+\DoxyCodeLine{105     \mbox{\hyperlink{backend_8h_a305227a30d17e71633d9779541653843}{\_PL\_pop}}(\&current);}
+\DoxyCodeLine{106     current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} = result;}
+\DoxyCodeLine{107   \}}
+\DoxyCodeLine{108   \textcolor{keywordflow}{return} current;}
+\DoxyCodeLine{109 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__calculate__rpn_8c_a08bca090eb755dc91c0c9610fae1552c}\label{__calculate__rpn_8c_a08bca090eb755dc91c0c9610fae1552c}} 
+\index{\_calculate\_rpn.c@{\_calculate\_rpn.c}!\_mod@{\_mod}}
+\index{\_mod@{\_mod}!\_calculate\_rpn.c@{\_calculate\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_mod()}{\_mod()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}}$\ast$ \+\_\+mod (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$}]{current,  }\item[{int $\ast$}]{status }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{224                                                \{}
+\DoxyCodeLine{225   \textcolor{keywordflow}{if} (current == NULL || current-\/>\mbox{\hyperlink{struct_p_l___stack_a7da488d1cb145a88e22b5612ffeae509}{next}} == NULL) \{}
+\DoxyCodeLine{226     *status = \mbox{\hyperlink{backend_8h_a2d6ba52c5a84d1dd2ec00d804c42b52c}{ERROR\_ILLEGAL\_EXPRESSION}};}
+\DoxyCodeLine{227   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{228     \textcolor{keywordtype}{double} result = fmod(current-\/>\mbox{\hyperlink{struct_p_l___stack_a7da488d1cb145a88e22b5612ffeae509}{next}}-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}}, current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}});}
+\DoxyCodeLine{229     \mbox{\hyperlink{backend_8h_a305227a30d17e71633d9779541653843}{\_PL\_pop}}(\&current);}
+\DoxyCodeLine{230     current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} = result;}
+\DoxyCodeLine{231   \}}
+\DoxyCodeLine{232   \textcolor{keywordflow}{return} current;}
+\DoxyCodeLine{233 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__calculate__rpn_8c_a23cc1b209e085d9bbf2280c6c9dadb68}\label{__calculate__rpn_8c_a23cc1b209e085d9bbf2280c6c9dadb68}} 
+\index{\_calculate\_rpn.c@{\_calculate\_rpn.c}!\_multi@{\_multi}}
+\index{\_multi@{\_multi}!\_calculate\_rpn.c@{\_calculate\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_multi()}{\_multi()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}}$\ast$ \+\_\+multi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$}]{current,  }\item[{int $\ast$}]{status }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{111                                                  \{}
+\DoxyCodeLine{112   \textcolor{keywordflow}{if} (current == NULL || current-\/>\mbox{\hyperlink{struct_p_l___stack_a7da488d1cb145a88e22b5612ffeae509}{next}} == NULL) \{}
+\DoxyCodeLine{113     *status = \mbox{\hyperlink{backend_8h_a2d6ba52c5a84d1dd2ec00d804c42b52c}{ERROR\_ILLEGAL\_EXPRESSION}};}
+\DoxyCodeLine{114   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{115     \textcolor{keywordtype}{double} result = current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} * current-\/>\mbox{\hyperlink{struct_p_l___stack_a7da488d1cb145a88e22b5612ffeae509}{next}}-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}};}
+\DoxyCodeLine{116     \mbox{\hyperlink{backend_8h_a305227a30d17e71633d9779541653843}{\_PL\_pop}}(\&current);}
+\DoxyCodeLine{117     current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} = result;}
+\DoxyCodeLine{118   \}}
+\DoxyCodeLine{119   \textcolor{keywordflow}{return} current;}
+\DoxyCodeLine{120 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__calculate__rpn_8c_a9a8d92e4dce43bff303de9d429b9409a}\label{__calculate__rpn_8c_a9a8d92e4dce43bff303de9d429b9409a}} 
+\index{\_calculate\_rpn.c@{\_calculate\_rpn.c}!\_plus@{\_plus}}
+\index{\_plus@{\_plus}!\_calculate\_rpn.c@{\_calculate\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_plus()}{\_plus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}}$\ast$ \+\_\+plus (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$}]{current,  }\item[{int $\ast$}]{status }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{89                                                 \{}
+\DoxyCodeLine{90   \textcolor{keywordflow}{if} (current == NULL || current-\/>\mbox{\hyperlink{struct_p_l___stack_a7da488d1cb145a88e22b5612ffeae509}{next}} == NULL) \{}
+\DoxyCodeLine{91     *status = \mbox{\hyperlink{backend_8h_a2d6ba52c5a84d1dd2ec00d804c42b52c}{ERROR\_ILLEGAL\_EXPRESSION}};}
+\DoxyCodeLine{92   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{93     \textcolor{keywordtype}{double} result = current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} + current-\/>\mbox{\hyperlink{struct_p_l___stack_a7da488d1cb145a88e22b5612ffeae509}{next}}-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}};}
+\DoxyCodeLine{94     \mbox{\hyperlink{backend_8h_a305227a30d17e71633d9779541653843}{\_PL\_pop}}(\&current);}
+\DoxyCodeLine{95     current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} = result;}
+\DoxyCodeLine{96   \}}
+\DoxyCodeLine{97   \textcolor{keywordflow}{return} current;}
+\DoxyCodeLine{98 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__calculate__rpn_8c_a893752115676a2187f0a81a59325d3cf}\label{__calculate__rpn_8c_a893752115676a2187f0a81a59325d3cf}} 
+\index{\_calculate\_rpn.c@{\_calculate\_rpn.c}!\_power@{\_power}}
+\index{\_power@{\_power}!\_calculate\_rpn.c@{\_calculate\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_power()}{\_power()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}}$\ast$ \+\_\+power (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$}]{current,  }\item[{int $\ast$}]{status }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{135                                                  \{}
+\DoxyCodeLine{136   \textcolor{keywordflow}{if} (current == NULL || current-\/>\mbox{\hyperlink{struct_p_l___stack_a7da488d1cb145a88e22b5612ffeae509}{next}} == NULL) \{}
+\DoxyCodeLine{137     *status = \mbox{\hyperlink{backend_8h_a2d6ba52c5a84d1dd2ec00d804c42b52c}{ERROR\_ILLEGAL\_EXPRESSION}};}
+\DoxyCodeLine{138   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{139     \textcolor{keywordtype}{double} result = pow(current-\/>\mbox{\hyperlink{struct_p_l___stack_a7da488d1cb145a88e22b5612ffeae509}{next}}-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}}, current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}});}
+\DoxyCodeLine{140     \mbox{\hyperlink{backend_8h_a305227a30d17e71633d9779541653843}{\_PL\_pop}}(\&current);}
+\DoxyCodeLine{141     current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} = result;}
+\DoxyCodeLine{142   \}}
+\DoxyCodeLine{143   \textcolor{keywordflow}{return} current;}
+\DoxyCodeLine{144 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__calculate__rpn_8c_a10f9b381ba9df973fbc70d6b26e0d5f8}\label{__calculate__rpn_8c_a10f9b381ba9df973fbc70d6b26e0d5f8}} 
+\index{\_calculate\_rpn.c@{\_calculate\_rpn.c}!\_process\_operation@{\_process\_operation}}
+\index{\_process\_operation@{\_process\_operation}!\_calculate\_rpn.c@{\_calculate\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_process\_operation()}{\_process\_operation()}}
+{\footnotesize\ttfamily void \+\_\+process\+\_\+operation (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ptr,  }\item[{\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$$\ast$}]{current,  }\item[{int $\ast$}]{status }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{28                                                                           \{}
+\DoxyCodeLine{29   \textcolor{keywordflow}{if} (strcmp(ptr, \textcolor{stringliteral}{"{}+"{}}) == 0)}
+\DoxyCodeLine{30     *current = \mbox{\hyperlink{__calculate__rpn_8c_a9a8d92e4dce43bff303de9d429b9409a}{\_plus}}(*current, status);}
+\DoxyCodeLine{31   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(ptr, \textcolor{stringliteral}{"{}-\/"{}}) == 0)}
+\DoxyCodeLine{32     *current = \mbox{\hyperlink{__calculate__rpn_8c_ac5ba47359824d9fcb59fb81dea35c87c}{\_minus}}(*current, status);}
+\DoxyCodeLine{33   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(ptr, \textcolor{stringliteral}{"{}*"{}}) == 0)}
+\DoxyCodeLine{34     *current = \mbox{\hyperlink{__calculate__rpn_8c_a23cc1b209e085d9bbf2280c6c9dadb68}{\_multi}}(*current, status);}
+\DoxyCodeLine{35   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(ptr, \textcolor{stringliteral}{"{}/"{}}) == 0)}
+\DoxyCodeLine{36     *current = \mbox{\hyperlink{__calculate__rpn_8c_a9441ab5262f74f2cf460a51d30cd4aa9}{\_devide}}(*current, status);}
+\DoxyCodeLine{37   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(ptr, \textcolor{stringliteral}{"{}\string^"{}}) == 0)}
+\DoxyCodeLine{38     *current = \mbox{\hyperlink{__calculate__rpn_8c_a893752115676a2187f0a81a59325d3cf}{\_power}}(*current, status);}
+\DoxyCodeLine{39   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(ptr, \textcolor{stringliteral}{"{}\string~"{}}) == 0)}
+\DoxyCodeLine{40     *current = \mbox{\hyperlink{__calculate__rpn_8c_afb6b04ad7ff1d249679d7a12e5fdf42a}{\_uniminus}}(*current, status);}
+\DoxyCodeLine{41   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(ptr, \textcolor{stringliteral}{"{}acos"{}}) == 0)}
+\DoxyCodeLine{42     *current = \mbox{\hyperlink{__calculate__rpn_8c_aa15d644a57b6187b6fd6eac96148982e}{\_acos}}(*current, status);}
+\DoxyCodeLine{43   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(ptr, \textcolor{stringliteral}{"{}asin"{}}) == 0)}
+\DoxyCodeLine{44     *current = \mbox{\hyperlink{__calculate__rpn_8c_a22c75748d2a6a2b04293f7ea41124fc0}{\_asin}}(*current, status);}
+\DoxyCodeLine{45   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(ptr, \textcolor{stringliteral}{"{}atan"{}}) == 0)}
+\DoxyCodeLine{46     *current = \mbox{\hyperlink{__calculate__rpn_8c_a5bc368b64be6dd5a3e0c0dbd4eda199f}{\_atan}}(*current, status);}
+\DoxyCodeLine{47   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(ptr, \textcolor{stringliteral}{"{}cos"{}}) == 0)}
+\DoxyCodeLine{48     *current = \mbox{\hyperlink{__calculate__rpn_8c_a9a65eec2a0fcf9777c10218832c9d164}{\_cos}}(*current, status);}
+\DoxyCodeLine{49   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(ptr, \textcolor{stringliteral}{"{}ln"{}}) == 0)}
+\DoxyCodeLine{50     *current = \mbox{\hyperlink{__calculate__rpn_8c_a179f9f1a006eebe406cef1b16deacb26}{\_ln}}(*current, status);}
+\DoxyCodeLine{51   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(ptr, \textcolor{stringliteral}{"{}log"{}}) == 0)}
+\DoxyCodeLine{52     *current = \mbox{\hyperlink{__calculate__rpn_8c_a35e7ea035ee667ec45ed0fb8d51578db}{\_log}}(*current, status);}
+\DoxyCodeLine{53   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(ptr, \textcolor{stringliteral}{"{}mod"{}}) == 0)}
+\DoxyCodeLine{54     *current = \mbox{\hyperlink{__calculate__rpn_8c_a08bca090eb755dc91c0c9610fae1552c}{\_mod}}(*current, status);}
+\DoxyCodeLine{55   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(ptr, \textcolor{stringliteral}{"{}sqrt"{}}) == 0)}
+\DoxyCodeLine{56     *current = \mbox{\hyperlink{__calculate__rpn_8c_ac003734cf13fbe35c2711617f5bc0622}{\_sqrt}}(*current, status);}
+\DoxyCodeLine{57   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(ptr, \textcolor{stringliteral}{"{}sin"{}}) == 0)}
+\DoxyCodeLine{58     *current = \mbox{\hyperlink{__calculate__rpn_8c_aee9242a365b7998a02724e6fa3a8931b}{\_sin}}(*current, status);}
+\DoxyCodeLine{59   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (strcmp(ptr, \textcolor{stringliteral}{"{}tan"{}}) == 0)}
+\DoxyCodeLine{60     *current = \mbox{\hyperlink{__calculate__rpn_8c_a23dda6145fcef0e35de625722979d5e3}{\_tan}}(*current, status);}
+\DoxyCodeLine{61   \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{62     *status = 1;}
+\DoxyCodeLine{63   \}}
+\DoxyCodeLine{64 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__calculate__rpn_8c_afb14c66e6292310060494e628fea8d25}\label{__calculate__rpn_8c_afb14c66e6292310060494e628fea8d25}} 
+\index{\_calculate\_rpn.c@{\_calculate\_rpn.c}!\_remove\_trailing\_zeros@{\_remove\_trailing\_zeros}}
+\index{\_remove\_trailing\_zeros@{\_remove\_trailing\_zeros}!\_calculate\_rpn.c@{\_calculate\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_remove\_trailing\_zeros()}{\_remove\_trailing\_zeros()}}
+{\footnotesize\ttfamily void \+\_\+remove\+\_\+trailing\+\_\+zeros (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{str }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{281                                         \{}
+\DoxyCodeLine{282   \textcolor{keywordtype}{int} len = strlen(*str);}
+\DoxyCodeLine{283   \textcolor{keywordtype}{int} i = len -\/ 1;}
+\DoxyCodeLine{284   \textcolor{keywordflow}{while} ((*str)[i] == \textcolor{charliteral}{'0'}) \{}
+\DoxyCodeLine{285     (*str)[i-\/-\/] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{286   \}}
+\DoxyCodeLine{287   \textcolor{keywordflow}{if} ((*str)[i] == \textcolor{charliteral}{'.'}) \{}
+\DoxyCodeLine{288     (*str)[i] = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{289   \}}
+\DoxyCodeLine{290 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__calculate__rpn_8c_aee9242a365b7998a02724e6fa3a8931b}\label{__calculate__rpn_8c_aee9242a365b7998a02724e6fa3a8931b}} 
+\index{\_calculate\_rpn.c@{\_calculate\_rpn.c}!\_sin@{\_sin}}
+\index{\_sin@{\_sin}!\_calculate\_rpn.c@{\_calculate\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_sin()}{\_sin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}}$\ast$ \+\_\+sin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$}]{current,  }\item[{int $\ast$}]{status }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{247                                                \{}
+\DoxyCodeLine{248   \textcolor{keywordflow}{if} (current == NULL) \{}
+\DoxyCodeLine{249     *status = \mbox{\hyperlink{backend_8h_a2d6ba52c5a84d1dd2ec00d804c42b52c}{ERROR\_ILLEGAL\_EXPRESSION}};}
+\DoxyCodeLine{250   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{251     \textcolor{keywordtype}{double} result = sin(current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}});}
+\DoxyCodeLine{252     current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} = result;}
+\DoxyCodeLine{253   \}}
+\DoxyCodeLine{254   \textcolor{keywordflow}{return} current;}
+\DoxyCodeLine{255 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__calculate__rpn_8c_ac003734cf13fbe35c2711617f5bc0622}\label{__calculate__rpn_8c_ac003734cf13fbe35c2711617f5bc0622}} 
+\index{\_calculate\_rpn.c@{\_calculate\_rpn.c}!\_sqrt@{\_sqrt}}
+\index{\_sqrt@{\_sqrt}!\_calculate\_rpn.c@{\_calculate\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_sqrt()}{\_sqrt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}}$\ast$ \+\_\+sqrt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$}]{current,  }\item[{int $\ast$}]{status }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{235                                                 \{}
+\DoxyCodeLine{236   \textcolor{keywordflow}{if} (current == NULL) \{}
+\DoxyCodeLine{237     *status = \mbox{\hyperlink{backend_8h_a2d6ba52c5a84d1dd2ec00d804c42b52c}{ERROR\_ILLEGAL\_EXPRESSION}};}
+\DoxyCodeLine{238   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} < 0) \{}
+\DoxyCodeLine{239     *status = \mbox{\hyperlink{backend_8h_a4120d6e73e9991b164d753b743f5c021}{ERROR\_ILLEGAL\_ARGUMENT}};}
+\DoxyCodeLine{240   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{241     \textcolor{keywordtype}{double} result = sqrt(current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}});}
+\DoxyCodeLine{242     current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} = result;}
+\DoxyCodeLine{243   \}}
+\DoxyCodeLine{244   \textcolor{keywordflow}{return} current;}
+\DoxyCodeLine{245 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__calculate__rpn_8c_a23dda6145fcef0e35de625722979d5e3}\label{__calculate__rpn_8c_a23dda6145fcef0e35de625722979d5e3}} 
+\index{\_calculate\_rpn.c@{\_calculate\_rpn.c}!\_tan@{\_tan}}
+\index{\_tan@{\_tan}!\_calculate\_rpn.c@{\_calculate\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_tan()}{\_tan()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}}$\ast$ \+\_\+tan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$}]{current,  }\item[{int $\ast$}]{status }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{257                                                \{}
+\DoxyCodeLine{258   \textcolor{keywordflow}{if} (current == NULL) \{}
+\DoxyCodeLine{259     *status = \mbox{\hyperlink{backend_8h_a2d6ba52c5a84d1dd2ec00d804c42b52c}{ERROR\_ILLEGAL\_EXPRESSION}};}
+\DoxyCodeLine{260   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{261     \textcolor{keywordtype}{double} result = tan(current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}});}
+\DoxyCodeLine{262     current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} = result;}
+\DoxyCodeLine{263   \}}
+\DoxyCodeLine{264   \textcolor{keywordflow}{return} current;}
+\DoxyCodeLine{265 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__calculate__rpn_8c_afb6b04ad7ff1d249679d7a12e5fdf42a}\label{__calculate__rpn_8c_afb6b04ad7ff1d249679d7a12e5fdf42a}} 
+\index{\_calculate\_rpn.c@{\_calculate\_rpn.c}!\_uniminus@{\_uniminus}}
+\index{\_uniminus@{\_uniminus}!\_calculate\_rpn.c@{\_calculate\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_uniminus()}{\_uniminus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}}$\ast$ \+\_\+uniminus (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_l___stack}{PL\+\_\+\+Stack}} $\ast$}]{current,  }\item[{int $\ast$}]{status }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{146                                                     \{}
+\DoxyCodeLine{147   \textcolor{keywordflow}{if} (current == NULL) \{}
+\DoxyCodeLine{148     *status = \mbox{\hyperlink{backend_8h_a2d6ba52c5a84d1dd2ec00d804c42b52c}{ERROR\_ILLEGAL\_EXPRESSION}};}
+\DoxyCodeLine{149   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{150     \textcolor{keywordtype}{double} result = current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} * -\/1;}
+\DoxyCodeLine{151     current-\/>\mbox{\hyperlink{struct_p_l___stack_a61f8fcab7eb61157046bf7e79bf32afb}{num}} = result;}
+\DoxyCodeLine{152   \}}
+\DoxyCodeLine{153   \textcolor{keywordflow}{return} current;}
+\DoxyCodeLine{154 \}}
+
+\end{DoxyCode}

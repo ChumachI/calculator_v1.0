@@ -1,0 +1,191 @@
+\hypertarget{class_main_window}{}\doxysection{Main\+Window Class Reference}
+\label{class_main_window}\index{MainWindow@{MainWindow}}
+
+
+{\ttfamily \#include $<$mainwindow.\+h$>$}
+
+Inheritance diagram for Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_window}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (QWidget $\ast$parent=nullptr)
+\item 
+\mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{$\sim$\+Main\+Window}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_window_a9c4f542263838b9ecd06eae839a42a34}{key\+Press\+Event}} (QKey\+Event $\ast$event)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_main_window_a996c5a2b6f77944776856f08ec30858d}\label{class_main_window_a996c5a2b6f77944776856f08ec30858d}} 
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::\+Main\+Window (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{8     : QMainWindow(parent), ui(\textcolor{keyword}{new} \mbox{\hyperlink{class_ui_1_1_main_window}{Ui::MainWindow}}) \{}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10   ui-\/>\mbox{\hyperlink{class_ui___main_window_acf4a0872c4c77d8f43a2ec66ed849b58}{setupUi}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{11   ui-\/>\mbox{\hyperlink{class_ui___main_window_ab5eabebdaafde9e4620ec2081e86e98f}{widget}}-\/>\mbox{\hyperlink{class_q_custom_plot_a9a79cd0158a4c7f30cbc702f0fd800e4}{xAxis}}-\/>\mbox{\hyperlink{class_q_c_p_axis_aebdfea5d44c3a0ad2b4700cd4d25b641}{setRange}}(-\/10, 10);}
+\DoxyCodeLine{12   ui-\/>\mbox{\hyperlink{class_ui___main_window_ab5eabebdaafde9e4620ec2081e86e98f}{widget}}-\/>\mbox{\hyperlink{class_q_custom_plot_af6fea5679725b152c14facd920b19367}{yAxis}}-\/>\mbox{\hyperlink{class_q_c_p_axis_aebdfea5d44c3a0ad2b4700cd4d25b641}{setRange}}(-\/10, 10);}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14   x\_begin = -\/10;}
+\DoxyCodeLine{15   x\_end = 10;}
+\DoxyCodeLine{16   h = (x\_end -\/ x\_begin)/10000;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18   \textcolor{comment}{// Цифровые кнопки}}
+\DoxyCodeLine{19   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_a18389a756564d6dbec7191d6f727925d}{pushButton\_0}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{20           \&MainWindow::digit\_buttons);}
+\DoxyCodeLine{21   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_a6fdadda10a8bec1d52af4b66f782e076}{pushButton\_1}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{22           \&MainWindow::digit\_buttons);}
+\DoxyCodeLine{23   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_a59a7d8124bce933d63f53f2153d447b4}{pushButton\_2}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{24           \&MainWindow::digit\_buttons);}
+\DoxyCodeLine{25   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_ac92cce0478c1025ace05ff4f8870bb1c}{pushButton\_3}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{26           \&MainWindow::digit\_buttons);}
+\DoxyCodeLine{27   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_acb0b2f196dc2224f287b67594233297f}{pushButton\_4}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{28           \&MainWindow::digit\_buttons);}
+\DoxyCodeLine{29   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_adafdad7c065227c5d14b68d75789cbe2}{pushButton\_5}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{30           \&MainWindow::digit\_buttons);}
+\DoxyCodeLine{31   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_a3f20112708231220f3a4f567802130c5}{pushButton\_6}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{32           \&MainWindow::digit\_buttons);}
+\DoxyCodeLine{33   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_aeb282560fc662a1c9caf4e519f5e6ac0}{pushButton\_7}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{34           \&MainWindow::digit\_buttons);}
+\DoxyCodeLine{35   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_a048bd3b46acbadff6e94f1638545e477}{pushButton\_8}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{36           \&MainWindow::digit\_buttons);}
+\DoxyCodeLine{37   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_a73935b3c453e1203e6bea365a6564802}{pushButton\_9}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{38           \&MainWindow::digit\_buttons);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{comment}{// Функциональные кнопки}}
+\DoxyCodeLine{41   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_a094f3673334e1c93eabb0ac93a371807}{pushButton\_acos}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{42           \&MainWindow::on\_pushButton\_func\_clicked);}
+\DoxyCodeLine{43   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_affa9f703b039760814233e94f59dec1e}{pushButton\_asin}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{44           \&MainWindow::on\_pushButton\_func\_clicked);}
+\DoxyCodeLine{45   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_a49b6dfa75906a4ec1a3c2ff0034d91f2}{pushButton\_atan}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{46           \&MainWindow::on\_pushButton\_func\_clicked);}
+\DoxyCodeLine{47   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_a88040c939bfc87a1e23d54e68b8a9205}{pushButton\_cos}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{48           \&MainWindow::on\_pushButton\_func\_clicked);}
+\DoxyCodeLine{49   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_a5c54ea2e016af2719e6e9521cee52ee7}{pushButton\_ln}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{50           \&MainWindow::on\_pushButton\_func\_clicked);}
+\DoxyCodeLine{51   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_a6dcb716668b185eb4a5fd87231125483}{pushButton\_log}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{52           \&MainWindow::on\_pushButton\_func\_clicked);}
+\DoxyCodeLine{53   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_a26148b3cbbbaf37cf041510243e209f5}{pushButton\_sin}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{54           \&MainWindow::on\_pushButton\_func\_clicked);}
+\DoxyCodeLine{55   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_a524d7ba0f4b2057c09a2884cfc4f8804}{pushButton\_sqrt}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{56           \&MainWindow::on\_pushButton\_func\_clicked);}
+\DoxyCodeLine{57   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_a1c48a008454a0769cb726e5d320b7ce7}{pushButton\_tan}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{58           \&MainWindow::on\_pushButton\_func\_clicked);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60   \textcolor{comment}{// Операторы}}
+\DoxyCodeLine{61   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_af11c6ad5a72ace6c0be23a4cd519440e}{pushButton\_plus}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{62           \&MainWindow::on\_pushButton\_plus\_minus\_clicked);}
+\DoxyCodeLine{63   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_a216cb38fb0d0cd8c05782b57262c5fc9}{pushButton\_minus}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{64           \&MainWindow::on\_pushButton\_plus\_minus\_clicked);}
+\DoxyCodeLine{65   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_adba30e60189e64b6ed4e32b342255782}{pushButton\_mul}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{66           \&MainWindow::on\_pushButton\_mul\_div\_pow\_mod\_rb\_clicked);}
+\DoxyCodeLine{67   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_ae1f070a777e96c1bb687dab452521258}{pushButton\_div}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{68           \&MainWindow::on\_pushButton\_mul\_div\_pow\_mod\_rb\_clicked);}
+\DoxyCodeLine{69   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_a91ccb4181d36c713392d579d77d4b893}{pushButton\_mod}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{70           \&MainWindow::on\_pushButton\_mul\_div\_pow\_mod\_rb\_clicked);}
+\DoxyCodeLine{71   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_a766b95ecab41a5dd16718c62a80fce47}{pushButton\_rb}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{72           \&MainWindow::on\_pushButton\_mul\_div\_pow\_mod\_rb\_clicked);}
+\DoxyCodeLine{73   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_a270b02fe5d4ab46b93cb05c2777f44e9}{pushButton\_pow}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{74           \&MainWindow::on\_pushButton\_mul\_div\_pow\_mod\_rb\_clicked);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76   \textcolor{comment}{// Другие связи}}
+\DoxyCodeLine{77   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_ab33099b5534d688b0eb7d4b40b1385c7}{x\_max}}, \&QLineEdit::editingFinished, \textcolor{keyword}{this},}
+\DoxyCodeLine{78           \&MainWindow::edit\_graph\_params);}
+\DoxyCodeLine{79   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_a12b75ca4efdae3c5e36a5b39275c63e6}{x\_min}}, \&QLineEdit::editingFinished, \textcolor{keyword}{this},}
+\DoxyCodeLine{80           \&MainWindow::edit\_graph\_params);}
+\DoxyCodeLine{81   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_a9d3de6d6a272dcfdb92ea171a87f77b0}{y\_min}}, \&QLineEdit::editingFinished, \textcolor{keyword}{this},}
+\DoxyCodeLine{82           \&MainWindow::edit\_graph\_params);}
+\DoxyCodeLine{83   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_ab2b36ad379276df7237f6c2981db6b76}{y\_max}}, \&QLineEdit::editingFinished, \textcolor{keyword}{this},}
+\DoxyCodeLine{84           \&MainWindow::edit\_graph\_params);}
+\DoxyCodeLine{85   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_af041c3fab01a55fa0e3461bd374d4db6}{credit\_calc}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{86           \&MainWindow::calc\_credit);}
+\DoxyCodeLine{87   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_a9922b0ae9ce826dfccfcfe726983082c}{calc\_deposit}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{88           \&MainWindow::calc\_deposit);}
+\DoxyCodeLine{89   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_a908c3ed8837c4c3b857642b0ffd7e441}{add\_money}}, \&QPushButton::clicked, \textcolor{keyword}{this}, \&MainWindow::add\_money);}
+\DoxyCodeLine{90   connect(ui-\/>\mbox{\hyperlink{class_ui___main_window_adda0174f67be6ae3da471d9a072727cb}{take\_money}}, \&QPushButton::clicked, \textcolor{keyword}{this},}
+\DoxyCodeLine{91           \&MainWindow::add\_withdrawal);}
+\DoxyCodeLine{92   connect(qApp, \&QApplication::aboutToQuit, \textcolor{keyword}{this},}
+\DoxyCodeLine{93           \&MainWindow::on\_application\_about\_to\_quit);}
+\DoxyCodeLine{94 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}\label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}} 
+\index{MainWindow@{MainWindow}!````~MainWindow@{$\sim$MainWindow}}
+\index{````~MainWindow@{$\sim$MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{$\sim$MainWindow()}{~MainWindow()}}
+{\footnotesize\ttfamily Main\+Window\+::$\sim$\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{96 \{ \textcolor{keyword}{delete} ui; \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_main_window_a9c4f542263838b9ecd06eae839a42a34}\label{class_main_window_a9c4f542263838b9ecd06eae839a42a34}} 
+\index{MainWindow@{MainWindow}!keyPressEvent@{keyPressEvent}}
+\index{keyPressEvent@{keyPressEvent}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{keyPressEvent()}{keyPressEvent()}}
+{\footnotesize\ttfamily void Main\+Window\+::key\+Press\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{521                                                \{}
+\DoxyCodeLine{522   \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_0) \{}
+\DoxyCodeLine{523     ui-\/>\mbox{\hyperlink{class_ui___main_window_a18389a756564d6dbec7191d6f727925d}{pushButton\_0}}-\/>click();}
+\DoxyCodeLine{524   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_1) \{}
+\DoxyCodeLine{525     ui-\/>\mbox{\hyperlink{class_ui___main_window_a6fdadda10a8bec1d52af4b66f782e076}{pushButton\_1}}-\/>click();}
+\DoxyCodeLine{526   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_2) \{}
+\DoxyCodeLine{527     ui-\/>\mbox{\hyperlink{class_ui___main_window_a59a7d8124bce933d63f53f2153d447b4}{pushButton\_2}}-\/>click();}
+\DoxyCodeLine{528   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_3) \{}
+\DoxyCodeLine{529     ui-\/>\mbox{\hyperlink{class_ui___main_window_ac92cce0478c1025ace05ff4f8870bb1c}{pushButton\_3}}-\/>click();}
+\DoxyCodeLine{530   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_4) \{}
+\DoxyCodeLine{531     ui-\/>\mbox{\hyperlink{class_ui___main_window_acb0b2f196dc2224f287b67594233297f}{pushButton\_4}}-\/>click();}
+\DoxyCodeLine{532   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_5) \{}
+\DoxyCodeLine{533     ui-\/>\mbox{\hyperlink{class_ui___main_window_adafdad7c065227c5d14b68d75789cbe2}{pushButton\_5}}-\/>click();}
+\DoxyCodeLine{534   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_6) \{}
+\DoxyCodeLine{535     ui-\/>\mbox{\hyperlink{class_ui___main_window_a3f20112708231220f3a4f567802130c5}{pushButton\_6}}-\/>click();}
+\DoxyCodeLine{536   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_7) \{}
+\DoxyCodeLine{537     ui-\/>\mbox{\hyperlink{class_ui___main_window_aeb282560fc662a1c9caf4e519f5e6ac0}{pushButton\_7}}-\/>click();}
+\DoxyCodeLine{538   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_8) \{}
+\DoxyCodeLine{539     ui-\/>\mbox{\hyperlink{class_ui___main_window_a048bd3b46acbadff6e94f1638545e477}{pushButton\_8}}-\/>click();}
+\DoxyCodeLine{540   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_9) \{}
+\DoxyCodeLine{541     ui-\/>\mbox{\hyperlink{class_ui___main_window_a73935b3c453e1203e6bea365a6564802}{pushButton\_9}}-\/>click();}
+\DoxyCodeLine{542   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_Period || event-\/>key() == Qt::Key\_Comma) \{}
+\DoxyCodeLine{543     ui-\/>\mbox{\hyperlink{class_ui___main_window_a3e98fd698bc451135161e89b33d7836a}{pushButton\_dot}}-\/>click();}
+\DoxyCodeLine{544   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_Plus) \{}
+\DoxyCodeLine{545     ui-\/>\mbox{\hyperlink{class_ui___main_window_af11c6ad5a72ace6c0be23a4cd519440e}{pushButton\_plus}}-\/>click();}
+\DoxyCodeLine{546   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_Minus) \{}
+\DoxyCodeLine{547     ui-\/>\mbox{\hyperlink{class_ui___main_window_a216cb38fb0d0cd8c05782b57262c5fc9}{pushButton\_minus}}-\/>click();}
+\DoxyCodeLine{548   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_Slash) \{}
+\DoxyCodeLine{549     ui-\/>\mbox{\hyperlink{class_ui___main_window_ae1f070a777e96c1bb687dab452521258}{pushButton\_div}}-\/>click();}
+\DoxyCodeLine{550   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_Asterisk) \{}
+\DoxyCodeLine{551     ui-\/>\mbox{\hyperlink{class_ui___main_window_adba30e60189e64b6ed4e32b342255782}{pushButton\_mul}}-\/>click();}
+\DoxyCodeLine{552   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (event-\/>key() == Qt::Key\_Enter || event-\/>key() == Qt::Key\_Return) \{}
+\DoxyCodeLine{553     ui-\/>\mbox{\hyperlink{class_ui___main_window_a8297d94530f8d163621d3af23768791e}{pushButton\_result}}-\/>click();}
+\DoxyCodeLine{554   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{555     QMainWindow::keyPressEvent(event);}
+\DoxyCodeLine{556   \}}
+\DoxyCodeLine{557 \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+frontend/\mbox{\hyperlink{mainwindow_8h}{mainwindow.\+h}}\item 
+frontend/\mbox{\hyperlink{mainwindow_8cpp}{mainwindow.\+cpp}}\end{DoxyCompactItemize}

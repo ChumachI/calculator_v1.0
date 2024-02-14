@@ -1,0 +1,41 @@
+\hypertarget{main_8cpp}{}\doxysection{frontend/main.cpp File Reference}
+\label{main_8cpp}\index{frontend/main.cpp@{frontend/main.cpp}}
+{\ttfamily \#include \char`\"{}mainwindow.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$QApplication$>$}\newline
+{\ttfamily \#include $<$QLocale$>$}\newline
+{\ttfamily \#include $<$QTranslator$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{7                                  \{}
+\DoxyCodeLine{8   QApplication a(argc, argv);}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10   QTranslator translator;}
+\DoxyCodeLine{11   \textcolor{keyword}{const} QStringList uiLanguages = QLocale::system().uiLanguages();}
+\DoxyCodeLine{12   \textcolor{keywordflow}{for} (\textcolor{keyword}{const} QString \&locale : uiLanguages) \{}
+\DoxyCodeLine{13     \textcolor{keyword}{const} QString baseName = \textcolor{stringliteral}{"{}frontend\_"{}} + QLocale(locale).name();}
+\DoxyCodeLine{14     \textcolor{keywordflow}{if} (translator.load(\textcolor{stringliteral}{"{}:/i18n/"{}} + baseName)) \{}
+\DoxyCodeLine{15       a.installTranslator(\&translator);}
+\DoxyCodeLine{16       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{17     \}}
+\DoxyCodeLine{18   \}}
+\DoxyCodeLine{19   \mbox{\hyperlink{class_main_window}{MainWindow}} w;}
+\DoxyCodeLine{20   w.show();}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22   \textcolor{keywordflow}{return} a.exec();}
+\DoxyCodeLine{23 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,36 @@
+\hypertarget{main__test_8c}{}\doxysection{backend/\+\_\+tests/main\+\_\+test.c File Reference}
+\label{main__test_8c}\index{backend/\_tests/main\_test.c@{backend/\_tests/main\_test.c}}
+{\ttfamily \#include \char`\"{}tests.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main__test_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main__test_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main__test_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main\_test.c@{main\_test.c}!main@{main}}
+\index{main@{main}!main\_test.c@{main\_test.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3            \{}
+\DoxyCodeLine{4   \textcolor{keywordtype}{int} number\_failed;}
+\DoxyCodeLine{5   Suite *to\_rpn, *calc, *calc\_rpn;}
+\DoxyCodeLine{6   to\_rpn = \mbox{\hyperlink{tests_8h_a9dac5c31826af7b987e6a07c2f9dd4ad}{suite\_to\_rpn}}();}
+\DoxyCodeLine{7   calc = \mbox{\hyperlink{tests_8h_a04b5bf7fd0756b3321b58b94b8059a86}{suite\_calculate}}();}
+\DoxyCodeLine{8   calc\_rpn = \mbox{\hyperlink{tests_8h_a19802ea316d14502b3c4cb98e46504f0}{suite\_calc\_rpn}}();}
+\DoxyCodeLine{9   SRunner *sr = srunner\_create(to\_rpn);}
+\DoxyCodeLine{10   srunner\_add\_suite(sr, calc);}
+\DoxyCodeLine{11   srunner\_add\_suite(sr, calc\_rpn);}
+\DoxyCodeLine{12   srunner\_set\_fork\_status(sr, CK\_NOFORK);}
+\DoxyCodeLine{13   srunner\_run\_all(sr, CK\_NORMAL);}
+\DoxyCodeLine{14   number\_failed = srunner\_ntests\_failed(sr);}
+\DoxyCodeLine{15   srunner\_free(sr);}
+\DoxyCodeLine{16   \textcolor{keywordflow}{return} number\_failed == 0 ? 0 : 1;}
+\DoxyCodeLine{17 \}}
+
+\end{DoxyCode}

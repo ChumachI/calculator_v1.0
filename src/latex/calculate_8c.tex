@@ -1,0 +1,36 @@
+\hypertarget{calculate_8c}{}\doxysection{backend/calculate/calculate.c File Reference}
+\label{calculate_8c}\index{backend/calculate/calculate.c@{backend/calculate/calculate.c}}
+{\ttfamily \#include \char`\"{}../backend.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{calculate_8c_a4f47d4d8c653b1876a39fa08683cb278}{calculate}} (char $\ast$expression, char $\ast$$\ast$result)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{calculate_8c_a4f47d4d8c653b1876a39fa08683cb278}\label{calculate_8c_a4f47d4d8c653b1876a39fa08683cb278}} 
+\index{calculate.c@{calculate.c}!calculate@{calculate}}
+\index{calculate@{calculate}!calculate.c@{calculate.c}}
+\doxysubsubsection{\texorpdfstring{calculate()}{calculate()}}
+{\footnotesize\ttfamily int calculate (\begin{DoxyParamCaption}\item[{char $\ast$}]{expression,  }\item[{char $\ast$$\ast$}]{result }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3                                                \{}
+\DoxyCodeLine{4   \textcolor{keywordtype}{int} status = 0;}
+\DoxyCodeLine{5   \textcolor{keywordtype}{char} *rpn = NULL;}
+\DoxyCodeLine{6   status = \mbox{\hyperlink{backend_8h_a4839446f692207ae58c99b29e94497c8}{\_translate\_to\_rpn}}(expression, \&rpn);}
+\DoxyCodeLine{7   \textcolor{keywordflow}{if} (status == 0)}
+\DoxyCodeLine{8     status = \mbox{\hyperlink{backend_8h_ab34d988ec9c57a20419785ee8b140580}{\_calculate\_rpn}}(rpn, result);}
+\DoxyCodeLine{9   \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{10     *result = strdup(\textcolor{stringliteral}{"{}Некорректное выражение"{}});}
+\DoxyCodeLine{11     free(rpn); \textcolor{comment}{// Освобождение памяти для rpn в случае ошибки}}
+\DoxyCodeLine{12     rpn = NULL;}
+\DoxyCodeLine{13   \}}
+\DoxyCodeLine{14   \textcolor{keywordflow}{if} (rpn != NULL)}
+\DoxyCodeLine{15     free(rpn); \textcolor{comment}{// Освобождение памяти для rpn в случае успешного результата}}
+\DoxyCodeLine{16   \textcolor{keywordflow}{return} status;}
+\DoxyCodeLine{17 \}}
+
+\end{DoxyCode}

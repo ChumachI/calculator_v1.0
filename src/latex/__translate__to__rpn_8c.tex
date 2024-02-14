@@ -1,0 +1,451 @@
+\hypertarget{__translate__to__rpn_8c}{}\doxysection{backend/translate\+\_\+to\+\_\+rpn/\+\_\+translate\+\_\+to\+\_\+rpn.c File Reference}
+\label{__translate__to__rpn_8c}\index{backend/translate\_to\_rpn/\_translate\_to\_rpn.c@{backend/translate\_to\_rpn/\_translate\_to\_rpn.c}}
+{\ttfamily \#include \char`\"{}../backend.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{__translate__to__rpn_8c_a4839446f692207ae58c99b29e94497c8}{\+\_\+translate\+\_\+to\+\_\+rpn}} (char $\ast$expression, char $\ast$$\ast$result)
+\item 
+int \mbox{\hyperlink{__translate__to__rpn_8c_ae5ea18f382bb47dbcae4c83f6c853f09}{\+\_\+free\+\_\+stack}} (\mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$top, char $\ast$$\ast$result)
+\item 
+int \mbox{\hyperlink{__translate__to__rpn_8c_a57dd88da6f234e6928efac60eb88f3d5}{\+\_\+process\+\_\+rb}} (\mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$top, char $\ast$$\ast$result)
+\item 
+int \mbox{\hyperlink{__translate__to__rpn_8c_aa461c21a6b91c47ced7c436df0de70cc}{\+\_\+process\+\_\+num}} (char $\ast$expression, int $\ast$i, char $\ast$$\ast$result)
+\item 
+bool \mbox{\hyperlink{__translate__to__rpn_8c_abd5ed5b7612ead96a77a11e9de607ee9}{\+\_\+starts\+\_\+with}} (const char $\ast$pre, const char $\ast$str)
+\item 
+void \mbox{\hyperlink{__translate__to__rpn_8c_a9982121e9e592820c8a12d634f9cb883}{\+\_\+remove\+Extra\+Spaces}} (char $\ast$str)
+\item 
+void \mbox{\hyperlink{__translate__to__rpn_8c_a416e465347ad4769c6e386c91d5c0ffd}{\+\_\+process\+\_\+minus}} (char $\ast$expression, int i, \mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$top, char $\ast$$\ast$result)
+\item 
+void \mbox{\hyperlink{__translate__to__rpn_8c_a44c62e24324394d37256651cb951606c}{\+\_\+process\+\_\+plus}} (char $\ast$expression, int i, \mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$top, char $\ast$$\ast$result)
+\item 
+void \mbox{\hyperlink{__translate__to__rpn_8c_aee466dd6a0d78f8ed4cf49901da5e907}{\+\_\+process\+\_\+mul}} (\mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$top, char $\ast$$\ast$result)
+\item 
+void \mbox{\hyperlink{__translate__to__rpn_8c_ac810f5cb0349951e6a1555bd8c60a8d3}{\+\_\+process\+\_\+div}} (\mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$top, char $\ast$$\ast$result)
+\item 
+void \mbox{\hyperlink{__translate__to__rpn_8c_a33b85c956221a4303b118a729728b135}{\+\_\+process\+\_\+pow}} (\mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$top)
+\item 
+int \mbox{\hyperlink{__translate__to__rpn_8c_a7f2de9ebdc06b043d824388e28064322}{\+\_\+process\+\_\+a}} (char $\ast$expression, int $\ast$i, \mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$top)
+\item 
+int \mbox{\hyperlink{__translate__to__rpn_8c_aef1838ff237215a517cfb01a7b266d56}{\+\_\+process\+\_\+c}} (char $\ast$expression, int $\ast$i, \mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$top)
+\item 
+int \mbox{\hyperlink{__translate__to__rpn_8c_a535b640e966420baa768443c152a73e3}{\+\_\+process\+\_\+l}} (char $\ast$expression, int $\ast$i, \mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$top)
+\item 
+int \mbox{\hyperlink{__translate__to__rpn_8c_ac272e7a93bc13e85ab8fb7293b3ca3b2}{\+\_\+process\+\_\+m}} (char $\ast$expression, int $\ast$i, \mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$top)
+\item 
+int \mbox{\hyperlink{__translate__to__rpn_8c_a27076069e27a9c312560163cbea5eb96}{\+\_\+process\+\_\+s}} (char $\ast$expression, int $\ast$i, \mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$top)
+\item 
+int \mbox{\hyperlink{__translate__to__rpn_8c_acddd4051ff0b735fb20e665c6ce3fc36}{\+\_\+process\+\_\+t}} (char $\ast$expression, int $\ast$i, \mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$top)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{__translate__to__rpn_8c_ae5ea18f382bb47dbcae4c83f6c853f09}\label{__translate__to__rpn_8c_ae5ea18f382bb47dbcae4c83f6c853f09}} 
+\index{\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}!\_free\_stack@{\_free\_stack}}
+\index{\_free\_stack@{\_free\_stack}!\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_free\_stack()}{\_free\_stack()}}
+{\footnotesize\ttfamily int \+\_\+free\+\_\+stack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$}]{top,  }\item[{char $\ast$$\ast$}]{result }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{66                                             \{}
+\DoxyCodeLine{67   \textcolor{keywordtype}{int} status = 0;}
+\DoxyCodeLine{68   \textcolor{keywordflow}{while} ((*top)-\/>opt != NULL) \{}
+\DoxyCodeLine{69     \textcolor{keywordflow}{if} (strcmp((*top)-\/>opt, \textcolor{stringliteral}{"{} ( "{}}) == 0 || strcmp((*top)-\/>opt, \textcolor{stringliteral}{"{} ) "{}}) == 0) \{}
+\DoxyCodeLine{70       status = 1;}
+\DoxyCodeLine{71     \}}
+\DoxyCodeLine{72     strcat(*result, (*top)-\/>opt);}
+\DoxyCodeLine{73     \mbox{\hyperlink{backend_8h_a7b95ba10f0ee2713fc96bdd68e6e0246}{\_pop}}(top);}
+\DoxyCodeLine{74   \}}
+\DoxyCodeLine{75   \textcolor{keywordflow}{return} status;}
+\DoxyCodeLine{76 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__translate__to__rpn_8c_a7f2de9ebdc06b043d824388e28064322}\label{__translate__to__rpn_8c_a7f2de9ebdc06b043d824388e28064322}} 
+\index{\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}!\_process\_a@{\_process\_a}}
+\index{\_process\_a@{\_process\_a}!\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_process\_a()}{\_process\_a()}}
+{\footnotesize\ttfamily int \+\_\+process\+\_\+a (\begin{DoxyParamCaption}\item[{char $\ast$}]{expression,  }\item[{int $\ast$}]{i,  }\item[{\mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$}]{top }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{180                                                       \{}
+\DoxyCodeLine{181   \textcolor{keywordtype}{int} status = 0;}
+\DoxyCodeLine{182   \textcolor{keywordflow}{if} (\mbox{\hyperlink{__translate__to__rpn_8c_abd5ed5b7612ead96a77a11e9de607ee9}{\_starts\_with}}(\textcolor{stringliteral}{"{}acos"{}}, \&expression[*i])) \{}
+\DoxyCodeLine{183     \mbox{\hyperlink{backend_8h_aaf37da79c4caec5d7982a5bfdb8984c8}{\_push}}(top, \textcolor{stringliteral}{"{} acos "{}}, 5);}
+\DoxyCodeLine{184     (*i) += 3;}
+\DoxyCodeLine{185   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{__translate__to__rpn_8c_abd5ed5b7612ead96a77a11e9de607ee9}{\_starts\_with}}(\textcolor{stringliteral}{"{}asin"{}}, \&expression[*i])) \{}
+\DoxyCodeLine{186     \mbox{\hyperlink{backend_8h_aaf37da79c4caec5d7982a5bfdb8984c8}{\_push}}(top, \textcolor{stringliteral}{"{} asin "{}}, 5);}
+\DoxyCodeLine{187     (*i) += 3;}
+\DoxyCodeLine{188   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{__translate__to__rpn_8c_abd5ed5b7612ead96a77a11e9de607ee9}{\_starts\_with}}(\textcolor{stringliteral}{"{}atan"{}}, \&expression[*i])) \{}
+\DoxyCodeLine{189     \mbox{\hyperlink{backend_8h_aaf37da79c4caec5d7982a5bfdb8984c8}{\_push}}(top, \textcolor{stringliteral}{"{} atan "{}}, 5);}
+\DoxyCodeLine{190     (*i) += 3;}
+\DoxyCodeLine{191   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{192     status = 1;}
+\DoxyCodeLine{193   \}}
+\DoxyCodeLine{194   \textcolor{keywordflow}{return} status;}
+\DoxyCodeLine{195 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__translate__to__rpn_8c_aef1838ff237215a517cfb01a7b266d56}\label{__translate__to__rpn_8c_aef1838ff237215a517cfb01a7b266d56}} 
+\index{\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}!\_process\_c@{\_process\_c}}
+\index{\_process\_c@{\_process\_c}!\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_process\_c()}{\_process\_c()}}
+{\footnotesize\ttfamily int \+\_\+process\+\_\+c (\begin{DoxyParamCaption}\item[{char $\ast$}]{expression,  }\item[{int $\ast$}]{i,  }\item[{\mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$}]{top }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{197                                                       \{}
+\DoxyCodeLine{198   \textcolor{keywordtype}{int} status = 0;}
+\DoxyCodeLine{199   \textcolor{keywordflow}{if} (\mbox{\hyperlink{__translate__to__rpn_8c_abd5ed5b7612ead96a77a11e9de607ee9}{\_starts\_with}}(\textcolor{stringliteral}{"{}cos"{}}, \&expression[*i])) \{}
+\DoxyCodeLine{200     \mbox{\hyperlink{backend_8h_aaf37da79c4caec5d7982a5bfdb8984c8}{\_push}}(top, \textcolor{stringliteral}{"{} cos "{}}, 5);}
+\DoxyCodeLine{201     (*i) += 2;}
+\DoxyCodeLine{202   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{203     status = 1;}
+\DoxyCodeLine{204   \}}
+\DoxyCodeLine{205   \textcolor{keywordflow}{return} status;}
+\DoxyCodeLine{206 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__translate__to__rpn_8c_ac810f5cb0349951e6a1555bd8c60a8d3}\label{__translate__to__rpn_8c_ac810f5cb0349951e6a1555bd8c60a8d3}} 
+\index{\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}!\_process\_div@{\_process\_div}}
+\index{\_process\_div@{\_process\_div}!\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_process\_div()}{\_process\_div()}}
+{\footnotesize\ttfamily void \+\_\+process\+\_\+div (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$}]{top,  }\item[{char $\ast$$\ast$}]{result }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{170                                               \{}
+\DoxyCodeLine{171   \textcolor{keywordflow}{while} (*top \&\& (*top)-\/>order >= 2) \{}
+\DoxyCodeLine{172     strcat(*result, (*top)-\/>opt);}
+\DoxyCodeLine{173     \mbox{\hyperlink{backend_8h_a7b95ba10f0ee2713fc96bdd68e6e0246}{\_pop}}(top);}
+\DoxyCodeLine{174   \}}
+\DoxyCodeLine{175   \mbox{\hyperlink{backend_8h_aaf37da79c4caec5d7982a5bfdb8984c8}{\_push}}(top, \textcolor{stringliteral}{"{} / "{}}, 2);}
+\DoxyCodeLine{176 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__translate__to__rpn_8c_a535b640e966420baa768443c152a73e3}\label{__translate__to__rpn_8c_a535b640e966420baa768443c152a73e3}} 
+\index{\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}!\_process\_l@{\_process\_l}}
+\index{\_process\_l@{\_process\_l}!\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_process\_l()}{\_process\_l()}}
+{\footnotesize\ttfamily int \+\_\+process\+\_\+l (\begin{DoxyParamCaption}\item[{char $\ast$}]{expression,  }\item[{int $\ast$}]{i,  }\item[{\mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$}]{top }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{208                                                       \{}
+\DoxyCodeLine{209   \textcolor{keywordtype}{int} status = 0;}
+\DoxyCodeLine{210   \textcolor{keywordflow}{if} (\mbox{\hyperlink{__translate__to__rpn_8c_abd5ed5b7612ead96a77a11e9de607ee9}{\_starts\_with}}(\textcolor{stringliteral}{"{}ln"{}}, \&expression[*i])) \{}
+\DoxyCodeLine{211     \mbox{\hyperlink{backend_8h_aaf37da79c4caec5d7982a5bfdb8984c8}{\_push}}(top, \textcolor{stringliteral}{"{} ln "{}}, 5);}
+\DoxyCodeLine{212     (*i) += 1;}
+\DoxyCodeLine{213   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{__translate__to__rpn_8c_abd5ed5b7612ead96a77a11e9de607ee9}{\_starts\_with}}(\textcolor{stringliteral}{"{}log"{}}, \&expression[*i])) \{}
+\DoxyCodeLine{214     \mbox{\hyperlink{backend_8h_aaf37da79c4caec5d7982a5bfdb8984c8}{\_push}}(top, \textcolor{stringliteral}{"{} log "{}}, 5);}
+\DoxyCodeLine{215     (*i) += 2;}
+\DoxyCodeLine{216   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{217     status = 1;}
+\DoxyCodeLine{218   \}}
+\DoxyCodeLine{219   \textcolor{keywordflow}{return} status;}
+\DoxyCodeLine{220 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__translate__to__rpn_8c_ac272e7a93bc13e85ab8fb7293b3ca3b2}\label{__translate__to__rpn_8c_ac272e7a93bc13e85ab8fb7293b3ca3b2}} 
+\index{\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}!\_process\_m@{\_process\_m}}
+\index{\_process\_m@{\_process\_m}!\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_process\_m()}{\_process\_m()}}
+{\footnotesize\ttfamily int \+\_\+process\+\_\+m (\begin{DoxyParamCaption}\item[{char $\ast$}]{expression,  }\item[{int $\ast$}]{i,  }\item[{\mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$}]{top }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{222                                                       \{}
+\DoxyCodeLine{223   \textcolor{keywordtype}{int} status = 0;}
+\DoxyCodeLine{224   \textcolor{keywordflow}{if} (\mbox{\hyperlink{__translate__to__rpn_8c_abd5ed5b7612ead96a77a11e9de607ee9}{\_starts\_with}}(\textcolor{stringliteral}{"{}mod"{}}, \&expression[*i])) \{}
+\DoxyCodeLine{225     \mbox{\hyperlink{backend_8h_aaf37da79c4caec5d7982a5bfdb8984c8}{\_push}}(top, \textcolor{stringliteral}{"{} mod "{}}, 2);}
+\DoxyCodeLine{226     (*i) += 2;}
+\DoxyCodeLine{227   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{228     status = 1;}
+\DoxyCodeLine{229   \}}
+\DoxyCodeLine{230   \textcolor{keywordflow}{return} status;}
+\DoxyCodeLine{231 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__translate__to__rpn_8c_a416e465347ad4769c6e386c91d5c0ffd}\label{__translate__to__rpn_8c_a416e465347ad4769c6e386c91d5c0ffd}} 
+\index{\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}!\_process\_minus@{\_process\_minus}}
+\index{\_process\_minus@{\_process\_minus}!\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_process\_minus()}{\_process\_minus()}}
+{\footnotesize\ttfamily void \+\_\+process\+\_\+minus (\begin{DoxyParamCaption}\item[{char $\ast$}]{expression,  }\item[{int}]{i,  }\item[{\mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$}]{top,  }\item[{char $\ast$$\ast$}]{result }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{140                                                                          \{}
+\DoxyCodeLine{141   \textcolor{keywordflow}{if} (isdigit(expression[i -\/ 1]) || expression[i -\/ 1] == \textcolor{charliteral}{')'}) \{}
+\DoxyCodeLine{142     \textcolor{keywordflow}{while} (*top \&\& (*top)-\/>order >= 1) \{}
+\DoxyCodeLine{143       strcat(*result, (*top)-\/>opt);}
+\DoxyCodeLine{144       \mbox{\hyperlink{backend_8h_a7b95ba10f0ee2713fc96bdd68e6e0246}{\_pop}}(top);}
+\DoxyCodeLine{145     \}}
+\DoxyCodeLine{146     \mbox{\hyperlink{backend_8h_aaf37da79c4caec5d7982a5bfdb8984c8}{\_push}}(top, \textcolor{stringliteral}{"{} -\/ "{}}, 1);}
+\DoxyCodeLine{147   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{148     \mbox{\hyperlink{backend_8h_aaf37da79c4caec5d7982a5bfdb8984c8}{\_push}}(top, \textcolor{stringliteral}{"{} \string~ "{}}, 3);}
+\DoxyCodeLine{149   \}}
+\DoxyCodeLine{150 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__translate__to__rpn_8c_aee466dd6a0d78f8ed4cf49901da5e907}\label{__translate__to__rpn_8c_aee466dd6a0d78f8ed4cf49901da5e907}} 
+\index{\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}!\_process\_mul@{\_process\_mul}}
+\index{\_process\_mul@{\_process\_mul}!\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_process\_mul()}{\_process\_mul()}}
+{\footnotesize\ttfamily void \+\_\+process\+\_\+mul (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$}]{top,  }\item[{char $\ast$$\ast$}]{result }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{162                                               \{}
+\DoxyCodeLine{163   \textcolor{keywordflow}{while} (*top \&\& (*top)-\/>order >= 2) \{}
+\DoxyCodeLine{164     strcat(*result, (*top)-\/>opt);}
+\DoxyCodeLine{165     \mbox{\hyperlink{backend_8h_a7b95ba10f0ee2713fc96bdd68e6e0246}{\_pop}}(top);}
+\DoxyCodeLine{166   \}}
+\DoxyCodeLine{167   \mbox{\hyperlink{backend_8h_aaf37da79c4caec5d7982a5bfdb8984c8}{\_push}}(top, \textcolor{stringliteral}{"{} * "{}}, 2);}
+\DoxyCodeLine{168 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__translate__to__rpn_8c_aa461c21a6b91c47ced7c436df0de70cc}\label{__translate__to__rpn_8c_aa461c21a6b91c47ced7c436df0de70cc}} 
+\index{\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}!\_process\_num@{\_process\_num}}
+\index{\_process\_num@{\_process\_num}!\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_process\_num()}{\_process\_num()}}
+{\footnotesize\ttfamily int \+\_\+process\+\_\+num (\begin{DoxyParamCaption}\item[{char $\ast$}]{expression,  }\item[{int $\ast$}]{i,  }\item[{char $\ast$$\ast$}]{result }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{92                                                           \{}
+\DoxyCodeLine{93   \textcolor{keywordtype}{int} status = 0;}
+\DoxyCodeLine{94   \textcolor{keywordtype}{int} n = 0;}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96   \textcolor{keywordflow}{while} (isdigit(expression[*i]) || expression[*i] == \textcolor{charliteral}{'.'} ||}
+\DoxyCodeLine{97          expression[*i] == \textcolor{charliteral}{'e'}) \{}
+\DoxyCodeLine{98     \textcolor{keywordflow}{if} (expression[*i] == \textcolor{charliteral}{'e'}) \{}
+\DoxyCodeLine{99       \textcolor{keywordflow}{if} ((expression[(*i) + 1] == \textcolor{charliteral}{'-\/'} || expression[(*i) + 1] == \textcolor{charliteral}{'+'}) \&\&}
+\DoxyCodeLine{100           isdigit(expression[(*i) -\/ 1]) \&\& isdigit(expression[(*i) + 2])) \{}
+\DoxyCodeLine{101         (*i)++;}
+\DoxyCodeLine{102         n++;}
+\DoxyCodeLine{103       \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{104         status = 1;}
+\DoxyCodeLine{105       \}}
+\DoxyCodeLine{106     \}}
+\DoxyCodeLine{107     n++;}
+\DoxyCodeLine{108     (*i)++;}
+\DoxyCodeLine{109   \}}
+\DoxyCodeLine{110   strncat(*result, \&expression[(*i) -\/ n], n);}
+\DoxyCodeLine{111   \textcolor{keywordflow}{if} (n)}
+\DoxyCodeLine{112     strcat(*result, \textcolor{stringliteral}{"{} "{}});}
+\DoxyCodeLine{113   \textcolor{keywordflow}{return} status;}
+\DoxyCodeLine{114 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__translate__to__rpn_8c_a44c62e24324394d37256651cb951606c}\label{__translate__to__rpn_8c_a44c62e24324394d37256651cb951606c}} 
+\index{\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}!\_process\_plus@{\_process\_plus}}
+\index{\_process\_plus@{\_process\_plus}!\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_process\_plus()}{\_process\_plus()}}
+{\footnotesize\ttfamily void \+\_\+process\+\_\+plus (\begin{DoxyParamCaption}\item[{char $\ast$}]{expression,  }\item[{int}]{i,  }\item[{\mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$}]{top,  }\item[{char $\ast$$\ast$}]{result }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{152                                                                         \{}
+\DoxyCodeLine{153   \textcolor{keywordflow}{if} (isdigit(expression[i -\/ 1]) || expression[i -\/ 1] == \textcolor{charliteral}{')'}) \{}
+\DoxyCodeLine{154     \textcolor{keywordflow}{while} (*top \&\& (*top)-\/>order >= 1) \{}
+\DoxyCodeLine{155       strcat(*result, (*top)-\/>opt);}
+\DoxyCodeLine{156       \mbox{\hyperlink{backend_8h_a7b95ba10f0ee2713fc96bdd68e6e0246}{\_pop}}(top);}
+\DoxyCodeLine{157     \}}
+\DoxyCodeLine{158     \mbox{\hyperlink{backend_8h_aaf37da79c4caec5d7982a5bfdb8984c8}{\_push}}(top, \textcolor{stringliteral}{"{} + "{}}, 1);}
+\DoxyCodeLine{159   \}}
+\DoxyCodeLine{160 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__translate__to__rpn_8c_a33b85c956221a4303b118a729728b135}\label{__translate__to__rpn_8c_a33b85c956221a4303b118a729728b135}} 
+\index{\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}!\_process\_pow@{\_process\_pow}}
+\index{\_process\_pow@{\_process\_pow}!\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_process\_pow()}{\_process\_pow()}}
+{\footnotesize\ttfamily void \+\_\+process\+\_\+pow (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$}]{top }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{178 \{ \mbox{\hyperlink{backend_8h_aaf37da79c4caec5d7982a5bfdb8984c8}{\_push}}(top, \textcolor{stringliteral}{"{} \string^ "{}}, 3); \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__translate__to__rpn_8c_a57dd88da6f234e6928efac60eb88f3d5}\label{__translate__to__rpn_8c_a57dd88da6f234e6928efac60eb88f3d5}} 
+\index{\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}!\_process\_rb@{\_process\_rb}}
+\index{\_process\_rb@{\_process\_rb}!\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_process\_rb()}{\_process\_rb()}}
+{\footnotesize\ttfamily int \+\_\+process\+\_\+rb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$}]{top,  }\item[{char $\ast$$\ast$}]{result }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{78                                             \{}
+\DoxyCodeLine{79   \textcolor{keywordtype}{int} status = 0;}
+\DoxyCodeLine{80   \textcolor{keywordflow}{while} ((*top != NULL) \&\& strcmp((*top)-\/>opt, \textcolor{stringliteral}{"{} ( "{}})) \{}
+\DoxyCodeLine{81     strcat(*result, (*top)-\/>opt);}
+\DoxyCodeLine{82     \mbox{\hyperlink{backend_8h_a7b95ba10f0ee2713fc96bdd68e6e0246}{\_pop}}(top);}
+\DoxyCodeLine{83   \}}
+\DoxyCodeLine{84   \textcolor{keywordflow}{if} (((*top) != NULL) \&\& strcmp((*top)-\/>opt, \textcolor{stringliteral}{"{} ( "{}}) == 0) \{}
+\DoxyCodeLine{85     \mbox{\hyperlink{backend_8h_a7b95ba10f0ee2713fc96bdd68e6e0246}{\_pop}}(top);}
+\DoxyCodeLine{86   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{87     status = 1;}
+\DoxyCodeLine{88   \}}
+\DoxyCodeLine{89   \textcolor{keywordflow}{return} status;}
+\DoxyCodeLine{90 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__translate__to__rpn_8c_a27076069e27a9c312560163cbea5eb96}\label{__translate__to__rpn_8c_a27076069e27a9c312560163cbea5eb96}} 
+\index{\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}!\_process\_s@{\_process\_s}}
+\index{\_process\_s@{\_process\_s}!\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_process\_s()}{\_process\_s()}}
+{\footnotesize\ttfamily int \+\_\+process\+\_\+s (\begin{DoxyParamCaption}\item[{char $\ast$}]{expression,  }\item[{int $\ast$}]{i,  }\item[{\mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$}]{top }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{233                                                       \{}
+\DoxyCodeLine{234   \textcolor{keywordtype}{int} status = 0;}
+\DoxyCodeLine{235   \textcolor{keywordflow}{if} (\mbox{\hyperlink{__translate__to__rpn_8c_abd5ed5b7612ead96a77a11e9de607ee9}{\_starts\_with}}(\textcolor{stringliteral}{"{}sqrt"{}}, \&expression[*i])) \{}
+\DoxyCodeLine{236     \mbox{\hyperlink{backend_8h_aaf37da79c4caec5d7982a5bfdb8984c8}{\_push}}(top, \textcolor{stringliteral}{"{} sqrt "{}}, 5);}
+\DoxyCodeLine{237     (*i) += 3;}
+\DoxyCodeLine{238   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{__translate__to__rpn_8c_abd5ed5b7612ead96a77a11e9de607ee9}{\_starts\_with}}(\textcolor{stringliteral}{"{}sin"{}}, \&expression[*i])) \{}
+\DoxyCodeLine{239     \mbox{\hyperlink{backend_8h_aaf37da79c4caec5d7982a5bfdb8984c8}{\_push}}(top, \textcolor{stringliteral}{"{} sin "{}}, 5);}
+\DoxyCodeLine{240     (*i) += 2;}
+\DoxyCodeLine{241   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{242     status = 1;}
+\DoxyCodeLine{243   \}}
+\DoxyCodeLine{244   \textcolor{keywordflow}{return} status;}
+\DoxyCodeLine{245 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__translate__to__rpn_8c_acddd4051ff0b735fb20e665c6ce3fc36}\label{__translate__to__rpn_8c_acddd4051ff0b735fb20e665c6ce3fc36}} 
+\index{\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}!\_process\_t@{\_process\_t}}
+\index{\_process\_t@{\_process\_t}!\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_process\_t()}{\_process\_t()}}
+{\footnotesize\ttfamily int \+\_\+process\+\_\+t (\begin{DoxyParamCaption}\item[{char $\ast$}]{expression,  }\item[{int $\ast$}]{i,  }\item[{\mbox{\hyperlink{struct_stack}{Stack}} $\ast$$\ast$}]{top }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{247                                                       \{}
+\DoxyCodeLine{248   \textcolor{keywordtype}{int} status = 0;}
+\DoxyCodeLine{249   \textcolor{keywordflow}{if} (\mbox{\hyperlink{__translate__to__rpn_8c_abd5ed5b7612ead96a77a11e9de607ee9}{\_starts\_with}}(\textcolor{stringliteral}{"{}tan"{}}, \&expression[*i])) \{}
+\DoxyCodeLine{250     \mbox{\hyperlink{backend_8h_aaf37da79c4caec5d7982a5bfdb8984c8}{\_push}}(top, \textcolor{stringliteral}{"{} tan "{}}, 5);}
+\DoxyCodeLine{251     (*i) += 2;}
+\DoxyCodeLine{252   \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{253     status = 1;}
+\DoxyCodeLine{254   \}}
+\DoxyCodeLine{255   \textcolor{keywordflow}{return} status;}
+\DoxyCodeLine{256 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__translate__to__rpn_8c_a9982121e9e592820c8a12d634f9cb883}\label{__translate__to__rpn_8c_a9982121e9e592820c8a12d634f9cb883}} 
+\index{\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}!\_removeExtraSpaces@{\_removeExtraSpaces}}
+\index{\_removeExtraSpaces@{\_removeExtraSpaces}!\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_removeExtraSpaces()}{\_removeExtraSpaces()}}
+{\footnotesize\ttfamily void \+\_\+remove\+Extra\+Spaces (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{120                                    \{}
+\DoxyCodeLine{121   \textcolor{keywordtype}{bool} foundSpace = \textcolor{keyword}{false};}
+\DoxyCodeLine{122   \textcolor{keywordtype}{char} *dst = str;}
+\DoxyCodeLine{123   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; str[i] != \textcolor{charliteral}{'\(\backslash\)0'}; i++) \{}
+\DoxyCodeLine{124     \textcolor{keywordflow}{if} (isspace(str[i])) \{}
+\DoxyCodeLine{125       \textcolor{keywordflow}{if} (!foundSpace) \{}
+\DoxyCodeLine{126         foundSpace = \textcolor{keyword}{true};}
+\DoxyCodeLine{127         *dst++ = \textcolor{charliteral}{' '};}
+\DoxyCodeLine{128       \}}
+\DoxyCodeLine{129     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{130       foundSpace = \textcolor{keyword}{false};}
+\DoxyCodeLine{131       *dst++ = str[i];}
+\DoxyCodeLine{132     \}}
+\DoxyCodeLine{133   \}}
+\DoxyCodeLine{134   \textcolor{keywordflow}{while} (dst > str \&\& isspace(*(dst -\/ 1))) \{}
+\DoxyCodeLine{135     dst-\/-\/;}
+\DoxyCodeLine{136   \}}
+\DoxyCodeLine{137   *dst = \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{138 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__translate__to__rpn_8c_abd5ed5b7612ead96a77a11e9de607ee9}\label{__translate__to__rpn_8c_abd5ed5b7612ead96a77a11e9de607ee9}} 
+\index{\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}!\_starts\_with@{\_starts\_with}}
+\index{\_starts\_with@{\_starts\_with}!\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_starts\_with()}{\_starts\_with()}}
+{\footnotesize\ttfamily bool \+\_\+starts\+\_\+with (\begin{DoxyParamCaption}\item[{const char $\ast$}]{pre,  }\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{116                                                     \{}
+\DoxyCodeLine{117   \textcolor{keywordflow}{return} strncmp(pre, str, strlen(pre)) == 0;}
+\DoxyCodeLine{118 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{__translate__to__rpn_8c_a4839446f692207ae58c99b29e94497c8}\label{__translate__to__rpn_8c_a4839446f692207ae58c99b29e94497c8}} 
+\index{\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}!\_translate\_to\_rpn@{\_translate\_to\_rpn}}
+\index{\_translate\_to\_rpn@{\_translate\_to\_rpn}!\_translate\_to\_rpn.c@{\_translate\_to\_rpn.c}}
+\doxysubsubsection{\texorpdfstring{\_translate\_to\_rpn()}{\_translate\_to\_rpn()}}
+{\footnotesize\ttfamily int \+\_\+translate\+\_\+to\+\_\+rpn (\begin{DoxyParamCaption}\item[{char $\ast$}]{expression,  }\item[{char $\ast$$\ast$}]{result }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{3                                                        \{}
+\DoxyCodeLine{4   \textcolor{keywordtype}{int} status = 0;}
+\DoxyCodeLine{5   \textcolor{keywordtype}{int} exit = 0;}
+\DoxyCodeLine{6   *result = calloc(2000, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));}
+\DoxyCodeLine{7   \mbox{\hyperlink{struct_stack}{Stack}} *root = calloc(1, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_stack}{Stack}}));}
+\DoxyCodeLine{8   \mbox{\hyperlink{struct_stack}{Stack}} *top = root;}
+\DoxyCodeLine{9   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; expression[i] != \textcolor{charliteral}{'\(\backslash\)0'} \&\& status == 0 \&\& exit == 0; i++) \{}
+\DoxyCodeLine{10     status = \mbox{\hyperlink{__translate__to__rpn_8c_aa461c21a6b91c47ced7c436df0de70cc}{\_process\_num}}(expression, \&i, result);}
+\DoxyCodeLine{11     \textcolor{keywordflow}{switch} (expression[i]) \{}
+\DoxyCodeLine{12     \textcolor{keywordflow}{case} \textcolor{charliteral}{'-\/'}:}
+\DoxyCodeLine{13       \mbox{\hyperlink{__translate__to__rpn_8c_a416e465347ad4769c6e386c91d5c0ffd}{\_process\_minus}}(expression, i, \&top, result);}
+\DoxyCodeLine{14       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{15     \textcolor{keywordflow}{case} \textcolor{charliteral}{'+'}:}
+\DoxyCodeLine{16       \mbox{\hyperlink{__translate__to__rpn_8c_a44c62e24324394d37256651cb951606c}{\_process\_plus}}(expression, i, \&top, result);}
+\DoxyCodeLine{17       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{18     \textcolor{keywordflow}{case} \textcolor{charliteral}{'*'}:}
+\DoxyCodeLine{19       \mbox{\hyperlink{__translate__to__rpn_8c_aee466dd6a0d78f8ed4cf49901da5e907}{\_process\_mul}}(\&top, result);}
+\DoxyCodeLine{20       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{21     \textcolor{keywordflow}{case} \textcolor{charliteral}{'/'}:}
+\DoxyCodeLine{22       \mbox{\hyperlink{__translate__to__rpn_8c_ac810f5cb0349951e6a1555bd8c60a8d3}{\_process\_div}}(\&top, result);}
+\DoxyCodeLine{23       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{24     \textcolor{keywordflow}{case} \textcolor{charliteral}{'\string^'}:}
+\DoxyCodeLine{25       \mbox{\hyperlink{__translate__to__rpn_8c_a33b85c956221a4303b118a729728b135}{\_process\_pow}}(\&top);}
+\DoxyCodeLine{26       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{27     \textcolor{keywordflow}{case} \textcolor{charliteral}{'a'}:}
+\DoxyCodeLine{28       status = \mbox{\hyperlink{__translate__to__rpn_8c_a7f2de9ebdc06b043d824388e28064322}{\_process\_a}}(expression, \&i, \&top);}
+\DoxyCodeLine{29       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{30     \textcolor{keywordflow}{case} \textcolor{charliteral}{'c'}:}
+\DoxyCodeLine{31       status = \mbox{\hyperlink{__translate__to__rpn_8c_aef1838ff237215a517cfb01a7b266d56}{\_process\_c}}(expression, \&i, \&top);}
+\DoxyCodeLine{32       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{33     \textcolor{keywordflow}{case} \textcolor{charliteral}{'l'}:}
+\DoxyCodeLine{34       status = \mbox{\hyperlink{__translate__to__rpn_8c_a535b640e966420baa768443c152a73e3}{\_process\_l}}(expression, \&i, \&top);}
+\DoxyCodeLine{35       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{36     \textcolor{keywordflow}{case} \textcolor{charliteral}{'m'}:}
+\DoxyCodeLine{37       status = \mbox{\hyperlink{__translate__to__rpn_8c_ac272e7a93bc13e85ab8fb7293b3ca3b2}{\_process\_m}}(expression, \&i, \&top);}
+\DoxyCodeLine{38       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{39     \textcolor{keywordflow}{case} \textcolor{charliteral}{'s'}:}
+\DoxyCodeLine{40       status = \mbox{\hyperlink{__translate__to__rpn_8c_a27076069e27a9c312560163cbea5eb96}{\_process\_s}}(expression, \&i, \&top);}
+\DoxyCodeLine{41       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{42     \textcolor{keywordflow}{case} \textcolor{charliteral}{'t'}:}
+\DoxyCodeLine{43       status = \mbox{\hyperlink{__translate__to__rpn_8c_acddd4051ff0b735fb20e665c6ce3fc36}{\_process\_t}}(expression, \&i, \&top);}
+\DoxyCodeLine{44       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{45     \textcolor{keywordflow}{case} \textcolor{charliteral}{'('}:}
+\DoxyCodeLine{46       \mbox{\hyperlink{backend_8h_aaf37da79c4caec5d7982a5bfdb8984c8}{\_push}}(\&top, \textcolor{stringliteral}{"{} ( "{}}, 0);}
+\DoxyCodeLine{47       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{48     \textcolor{keywordflow}{case} \textcolor{charliteral}{')'}:}
+\DoxyCodeLine{49       status = \mbox{\hyperlink{__translate__to__rpn_8c_a57dd88da6f234e6928efac60eb88f3d5}{\_process\_rb}}(\&top, result);}
+\DoxyCodeLine{50       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{51     \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)0'}:}
+\DoxyCodeLine{52       exit = 1;}
+\DoxyCodeLine{53       \textcolor{keywordflow}{break};}
+\DoxyCodeLine{54     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{55       status = 1;}
+\DoxyCodeLine{56     \}}
+\DoxyCodeLine{57   \}}
+\DoxyCodeLine{58   \textcolor{keywordflow}{if} (status == 0)}
+\DoxyCodeLine{59     status = \mbox{\hyperlink{__translate__to__rpn_8c_ae5ea18f382bb47dbcae4c83f6c853f09}{\_free\_stack}}(\&top, result);}
+\DoxyCodeLine{60   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{61     \mbox{\hyperlink{__translate__to__rpn_8c_ae5ea18f382bb47dbcae4c83f6c853f09}{\_free\_stack}}(\&top, result);}
+\DoxyCodeLine{62   \mbox{\hyperlink{__translate__to__rpn_8c_a9982121e9e592820c8a12d634f9cb883}{\_removeExtraSpaces}}(*result);}
+\DoxyCodeLine{63   \textcolor{keywordflow}{return} status;}
+\DoxyCodeLine{64 \}}
+
+\end{DoxyCode}
